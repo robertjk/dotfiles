@@ -1,0 +1,1 @@
+syntax sync fromstart

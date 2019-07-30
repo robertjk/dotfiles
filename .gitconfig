@@ -1,0 +1,29 @@
+[user]
+	email = no-cheating@autistici.org
+	name = Robert J. Kusznier
+[core]
+	editor = vim
+[push]
+	default = simple
+[merge]
+	tool = gvimdiff
+[diff]
+    tool = gvimdiff
+[alias]
+    status-short = status --short
+	statuss = status-short
+	log-oneline = log --pretty=format:\"%C(auto)%h %d %s %C(green)(%an) %C(italic cyan)[%ad]\" --date=relative --graph
+    log1 = log-oneline
+	log-files = log1 --name-status
+	logf = log-files
+	log-stat = log1 --stat
+    logs = log-stat
+    last = log-oneline -1
+    diff-staged = diff --staged
+    diffs = diff-staged
+    unstage = reset HEAD
+    delete-merged-branches = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d
+    config-list-all = config --list
+    config-list-all-origin = config --list --show-origin
+[init]
+	templateDir = /home/robert/.git.d/template
