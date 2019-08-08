@@ -1,5 +1,8 @@
+"
+" After opening the file jump to the last position
+"
+
 if has("autocmd")
-    " After opening the file jump to the last position
     augroup jumponlastposition
       autocmd!
       autocmd BufReadPost *

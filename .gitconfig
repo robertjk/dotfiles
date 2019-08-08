@@ -1,22 +1,22 @@
 [user]
-	email = no-cheating@autistici.org
-	name = Robert J. Kusznier
+    email = no-cheating@autistici.org
+    name = Robert J. Kusznier
 [core]
-	editor = vim
+    editor = nvim
 [push]
-	default = simple
+    default = simple
 [merge]
-	tool = gvimdiff
+    tool = vimdiff
 [diff]
-    tool = gvimdiff
+    tool = vimdiff
 [alias]
     status-short = status --short
-	statuss = status-short
-	log-oneline = log --pretty=format:\"%C(auto)%h %d %s %C(green)(%an) %C(italic cyan)[%ad]\" --date=relative --graph
+    statuss = status-short
+    log-oneline = log --pretty=format:\"%C(auto)%h %d %s %C(green)(%an) %C(italic cyan)[%ad]\" --date=relative --graph
     log1 = log-oneline
-	log-files = log1 --name-status
-	logf = log-files
-	log-stat = log1 --stat
+    log-files = log1 --name-status
+    logf = log-files
+    log-stat = log1 --stat
     logs = log-stat
     last = log-oneline -1
     diff-staged = diff --staged
@@ -26,4 +26,4 @@
     config-list-all = config --list
     config-list-all-origin = config --list --show-origin
 [init]
-	templateDir = /home/robert/.git.d/template
+    templateDir = /home/robert/.git.d/template

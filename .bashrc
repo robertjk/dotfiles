@@ -50,8 +50,7 @@ HISTFILESIZE=100000000
 HISTSIZE=10000
 
 # Set Vim as default editor.
-export VISUAL='gvim --remote-tab-silent'
-export EDITOR=vim
+export EDITOR=nvim
 
 # Allow to use CTRL-s to search history forward like CTRL-r does backward
 stty -ixon

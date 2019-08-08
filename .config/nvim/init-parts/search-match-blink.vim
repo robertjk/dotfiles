@@ -1,6 +1,8 @@
-""" Briefly blink a search match when moving to it.
-""" Helps to see the match that cursor jumped to, when match highlighting is on.
-""" Author: Damian Conway's Die Blinkënmatchen.
+"
+" Briefly blink a search match when moving to it.
+" Helps to see the match that cursor jumped to, when match highlighting is on.
+" Author: Damian Conway's Die Blinkënmatchen.
+"
 
 let g:search_blink_time = 0.10
 

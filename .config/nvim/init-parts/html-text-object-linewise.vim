@@ -1,5 +1,7 @@
+"
 " Add linewise mode to `it` text object to help with HTML tags on separate
 " lines.
+"
 
 " 0: Strict, consider non-blank characters before and after the tags.
 " 1: Flexible, ignore non-blank characters before and after the tags.

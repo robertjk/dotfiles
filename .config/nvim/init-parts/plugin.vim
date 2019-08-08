@@ -1,18 +1,19 @@
-""" Plugins
+"
+" Plugins
+"
 
 " TODO (Plugins to check out):
 " * Valloric/YouCompleteMe
 
 " Plug (plugin manager) configuration listing all the plugins.
 " Specify directory for plugins.
-call plug#begin('~/.vim/bundle')
+call plug#begin($MYVIMCACHE . 'plugged')
     " Language/filetype support
     Plug 'hail2u/vim-css3-syntax'            " CSS 3
     Plug 'tpope/vim-git'                     " Git
     Plug 'PotatoesMaster/i3-vim-syntax'      " i3 Window Manager
     Plug 'pangloss/vim-javascript'           " JavaScript
     Plug 'othree/html5.vim'                  " HTML 5
-    Plug 'digitaltoad/vim-pug'               " Pug
     Plug 'cakebaker/scss-syntax.vim'         " Sass (SCSS)
     Plug 'leafgarland/typescript-vim'        " Typescript
     Plug 'posva/vim-vue'                     " Vue.js
@@ -21,10 +22,8 @@ call plug#begin('~/.vim/bundle')
     Plug 'sjl/badwolf'                                    " Bad Wolf
     Plug 'blockloop/vim-codeschool'                       " Codeschool
     Plug 'nanotech/jellybeans.vim'                        " Jellybeans
-    Plug 'tomasr/molokai'                                 " Molokai
-    Plug 'crusoexia/vim-monokai'                          " Monokai
+    Plug 'erichdongubler/vim-sublime-monokai'             " Monokai
     Plug 'NLKNguyen/papercolor-theme'                     " PaperColor
-    Plug 'reedes/vim-colors-pencil'                       " Pencil
     Plug 'altercation/vim-colors-solarized'               " Solarized
     Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}   " Tomorrow
 
@@ -60,13 +59,14 @@ let g:airline_theme = 'jellybeans'
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" Color theme
+" Set color theme (here, because used theme is imported as a plugin)
+colorscheme jellybeans
+" Jellybeans settings
+let g:jellybeans_use_term_italics = 1
 let g:jellybeans_overrides = {
     \ 'StatusLine': {'guifg': '000000', 'guibg': 'aaaaaa', 'attr': ''},
-    \ 'WildMenu':   {'guifg': 'f0a0c0', 'guibg': '302028', 'attr': 'italic'}
+    \ 'WildMenu':   {'guifg': 'f0a0c0', 'guibg': '302028', 'attr': 'italic'},
 \}
-" Set default theme (set here, because used theme is imported as a plugin).
-colorscheme jellybeans
 
 " Context commenstring
 " Without this line adding new keys doeesn't work. Don't know why...
@@ -111,7 +111,7 @@ command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args
 
 " vim-session
 " Where to save sessions.
-let g:session_directory = '~/.vim/session'
+let g:session_directory = $MYVIMCACHE . 'session'
 " not display prompt for loading last/default session when Vim starts
 let g:session_autoload = 'no'
 " Save session on quitting Vim

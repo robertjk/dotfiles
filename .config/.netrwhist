@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/usr/local/Cellar/neovim/0.3.8/share/nvim/runtime/doc'
+let g:netrw_dirhist_2='/Users/robert/programming/sofia_app'
+let g:netrw_dirhist_3='/usr/local/Cellar/neovim/0.3.8/share/nvim/runtime/doc'
+let g:netrw_dirhist_4='/Users/robert/programming/sofia_app'
+let g:netrw_dirhist_5='/Users/robert/programming'
+let g:netrw_dirhist_6='/Users/robert/programming/sofia_app'
