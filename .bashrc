@@ -31,7 +31,7 @@ T_VIOLET="\[$(tput setaf 13)\]"
 T_RESET="\[$(tput sgr0)\]"
 # user@hostname:path_relative_to_working_directory
 # $
-PS1="[${T_BLUE}\u@\h${T_RESET}:${T_BROWN}\w${T_RESET}]\n${T_WHITE}\$${T_RESET} "
+PS1="[${T_BLUE}\u@\h${T_RESET}: ${T_BROWN}\w${T_RESET}]\n${T_WHITE}\$${T_RESET} "
 
 # Adding colors to man pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
