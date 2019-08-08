@@ -3,6 +3,7 @@
     name = Robert J. Kusznier
 [core]
     editor = nvim
+    excludesFile = ~/.git.d/gitignore-global
 [push]
     default = simple
 [merge]
