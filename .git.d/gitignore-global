@@ -1,2 +1,3 @@
-# Vim swap files
+# Vim
 *.swp
+*.un~
