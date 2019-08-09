@@ -4,6 +4,7 @@
 
 " TODO (Plugins to check out):
 " * Valloric/YouCompleteMe
+" * Shougo/deoplete.nvim
 
 " Plug (plugin manager) configuration listing all the plugins.
 " Specify directory for plugins.
@@ -38,6 +39,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'ctrlpvim/ctrlp.vim'                " ctrlp (fuzzy finder)
     Plug 'FelikZ/ctrlp-py-matcher'           " ctrlp matcher
     Plug 'justinmk/vim-dirvish'              " Dirvish (file explorer)
+    Plug 'mattn/emmet-vim'                   " Emmet
     Plug 'editorconfig/editorconfig-vim'     " EditorConfig
     Plug 'tpope/vim-eunuch'                  " Eunuch (shell commands)
     Plug 'tpope/vim-fugitive'                " Fugitive (Git)
