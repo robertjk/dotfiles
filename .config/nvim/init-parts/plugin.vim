@@ -13,6 +13,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'tpope/vim-git'                     " Git
     Plug 'PotatoesMaster/i3-vim-syntax'      " i3 Window Manager
     Plug 'pangloss/vim-javascript'           " JavaScript
+    Plug 'mxw/vim-jsx'                       " JSX
     Plug 'othree/html5.vim'                  " HTML 5
     Plug 'cakebaker/scss-syntax.vim'         " Sass (SCSS)
     Plug 'leafgarland/typescript-vim'        " Typescript
@@ -31,6 +32,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'tpope/vim-abolish'                 " Abolish
     Plug 'vim-airline/vim-airline'           " Airline status line
     Plug 'vim-airline/vim-airline-themes'    " Airline themes
+    Plug 'dense-analysis/ale'                " Asynchronous Lint Engine (ALE)
     Plug 'tpope/vim-commentary'              " Commentary
     Plug 'suy/vim-context-commentstring'     " Context commentstring
     Plug 'ctrlpvim/ctrlp.vim'                " ctrlp (fuzzy finder)
@@ -48,7 +50,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'kana/vim-textobj-entire'           " Textobj entire (buffer)
     Plug 'kana/vim-textobj-user'             " Textobj user (textobj creation
     " Plug 'SirVer/ultisnips'                " UltiSnips
-    Plug 'honza/vim-snippets'                " Snippets for UltiSnips
+    " Plug 'honza/vim-snippets'              " Snippets for UltiSnips
     Plug 'tpope/vim-unimpaired'              " Unimpaired (some hotkeys)
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
 call plug#end()
