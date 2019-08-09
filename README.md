@@ -1,4 +1,4 @@
-Home directory
-==============
+Dotfiles
+========
 
-Bunch of configuration files that I use across all my Linux instances.
+Bunch of configuration files that I use across all my Linux machines.
