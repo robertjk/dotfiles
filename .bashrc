@@ -7,6 +7,7 @@
 [[ $- != *i* ]] && return
 
 
+
 ### Shell look
 
 # Load dircolors values from ~/.dir_colors if using terminal supporting more
@@ -16,20 +17,19 @@ if test -n "$ncolors" && test $ncolors -gt 8; then
     if [[ -f ~/.dir_colors ]]; then
         eval `dircolors -b ~/.dir_colors`
     fi
-    # For sshrc
-    if [[ -f $SSHHOME/.sshrc.d/.dir_colors ]]; then
-        eval `dircolors -b $SSHHOME/.sshrc.d/.dir_colors`
-    fi
 fi
 
-# Prompt format and coloring
+# Prompt color variables
 T_BROWN="\[$(tput setaf 3)\]"
 T_BLUE="\[$(tput setaf 4)\]"
 T_PINK="\[$(tput setaf 5)\]"
 T_WHITE="\[$(tput setaf 7)\]"
 T_VIOLET="\[$(tput setaf 13)\]"
 T_RESET="\[$(tput sgr0)\]"
-# user@hostname:path_relative_to_working_directory
+
+# Prompt format:
+#
+# user@hostname: path_relative_to_working_directory
 # $
 PS1="[${T_BLUE}\u@\h${T_RESET}: ${T_BROWN}\w${T_RESET}]\n${T_WHITE}\$${T_RESET} "
 
@@ -43,33 +43,49 @@ export LESS_TERMCAP_ue=$'\e[0m'           # end underline
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline man less pager
 
 
+
 ### Shell functionality
+
+# Set Vim as default editor.
+export EDITOR=nvim
 
 # History settings
 HISTFILESIZE=100000000
 HISTSIZE=10000
 
-# Set Vim as default editor.
-export EDITOR=nvim
-
 # Allow to use CTRL-s to search history forward like CTRL-r does backward
 stty -ixon
+
 
 
 ### Aliases
 
 # Unix commands
-alias ls='ls --color=auto' # Add coloring to ls
-alias ll='ls -lFh'
-alias la='ls -lAFh'
-alias l1='ls -1F'
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias diff='diff --color=auto' # Add coloring to diff
+
+# OS dependent
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # Linux
+    alias ls='ls --color=auto' # Add coloring to ls
+    alias diff='diff --color=auto' # Add coloring to diff
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # OS X
+    alias ls='ls -G' # Add coloring to ls
+fi
+
+# OS independent
+
 alias grep='grep --color=auto' # Add coloring to grep
 alias egrep='egrep --color=auto' # Add coloring to grep
 alias fgrep='fgrep --color=auto' # Add coloring to grep
+
+alias ll='ls -lFh'
+alias la='ls -lAFh'
+alias l1='ls -1F'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
 alias pse='ps -e'
 alias psf='ps -f'
@@ -89,16 +105,20 @@ alias tar-gz-extract='tar -xzvf'
 alias tar-gz-create='tar -czvf'
 
 # Pacman
-alias pacman='pacman --color auto'
-alias yay='yay --color auto'
-alias pacman-arch-upgrade='pacman -Syu'
-alias yay-arch-upgrade='yay -Syu'
-alias pacman-remove-orphans='pacman -Rns $(pacman -Qtdq)'
-alias pacman-list-orphans='pacman -Qdt'
-# List explicitly installed packages which weren't initially installed by Arch
-# (don't belong to 'base' nor 'base-devel' gropus).
-alias pacman-list-my-explicit="expac --timefmt='%Y-%m-%d %T' '%l\t%n' `pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }' | echo \$(cat)` | sort"
-alias pacman-list-last-20="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
+if [ -f "/etc/arch-release" ]; then
+    alias pacman='pacman --color auto'
+    alias yay='yay --color auto'
+    alias pacman-arch-upgrade='pacman -Syu'
+    alias yay-arch-upgrade='yay -Syu'
+    alias pacman-remove-orphans='pacman -Rns $(pacman -Qtdq)'
+    alias pacman-list-orphans='pacman -Qdt'
+    # List explicitly installed packages which weren't initially installed by Arch
+    # (don't belong to 'base' nor 'base-devel' gropus).
+    alias pacman-list-my-explicit="expac --timefmt='%Y-%m-%d %T' '%l\t%n' `pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }' | echo \$(cat)` | sort"
+    alias pacman-list-last-20="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
+fi
 
 # USB media
-alias media-unmount="udiskie-umount --detach"
+if type "udiskie-umount" > /dev/null 2>&1; then
+    alias media-unmount="udiskie-umount --detach"
+fi
