@@ -25,6 +25,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'blockloop/vim-codeschool'                       " Codeschool
     Plug 'nanotech/jellybeans.vim'                        " Jellybeans
     Plug 'erichdongubler/vim-sublime-monokai'             " Monokai
+    Plug 'mhartington/oceanic-next'                       " Oceanic Next
     Plug 'NLKNguyen/papercolor-theme'                     " PaperColor
     Plug 'altercation/vim-colors-solarized'               " Solarized
     Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}   " Tomorrow
