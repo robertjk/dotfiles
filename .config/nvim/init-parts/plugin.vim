@@ -25,6 +25,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'blockloop/vim-codeschool'                       " Codeschool
     Plug 'nanotech/jellybeans.vim'                        " Jellybeans
     Plug 'erichdongubler/vim-sublime-monokai'             " Monokai
+    Plug 'arcticicestudio/nord-vim'                       " Nord
     Plug 'mhartington/oceanic-next'                       " Oceanic Next
     Plug 'NLKNguyen/papercolor-theme'                     " PaperColor
     Plug 'altercation/vim-colors-solarized'               " Solarized
@@ -36,7 +37,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'vim-airline/vim-airline-themes'    " Airline themes
     Plug 'dense-analysis/ale'                " Asynchronous Lint Engine (ALE)
     Plug 'tpope/vim-commentary'              " Commentary
-    Plug 'suy/vim-context-commentstring'     " Context commentstring
+    "Plug 'suy/vim-context-commentstring'     " Context commentstring
     Plug 'ctrlpvim/ctrlp.vim'                " ctrlp (fuzzy finder)
     Plug 'FelikZ/ctrlp-py-matcher'           " ctrlp matcher
     Plug 'justinmk/vim-dirvish'              " Dirvish (file explorer)
@@ -58,31 +59,28 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
 call plug#end()
 
-" Airline
+""" Airline
 let g:airline_theme = 'jellybeans'
 " Tabline extension - display all buffers in tab space when only one tab open
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" Set color theme (here, because used theme is imported as a plugin)
+""" Ale
+" Lint only when saving file
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
+
+""" Color theme (here, because themes are imported as plugins)
 colorscheme jellybeans
 " Jellybeans settings
 let g:jellybeans_use_term_italics = 1
+" Overwrite default colors of wild menu
 let g:jellybeans_overrides = {
     \ 'StatusLine': {'guifg': '000000', 'guibg': 'aaaaaa', 'attr': ''},
     \ 'WildMenu':   {'guifg': 'f0a0c0', 'guibg': '302028', 'attr': 'italic'},
 \}
 
-" Context commenstring
-" Without this line adding new keys doeesn't work. Don't know why...
-let g:context#commentstring#table = g:context#commentstring#table
-let g:context#commentstring#table.php = {
-    \ 'javaScript'  : '// %s',
-    \ 'phpRegion'   : '// %s',
-    \ 'cssStyle'    : '/*%s*/',
-\}
-
-" ctrlp
+""" ctrlp
 " Set maximum number of results to unlimited
 let g:ctrlp_match_window = 'results:1000'
 " ctrlp will work in current directory by default
@@ -105,7 +103,7 @@ endif
 nnoremap <Leader><C-p>d :CtrlP ~/documents<CR>
 nnoremap <Leader><C-p>v :CtrlP ~/.vim<CR>
 
-" Dirvish
+""" Dirvish
 " Display directories first, then files
 let g:dirvish_mode = ':sort ,^.*[\/],'
 " Overwrite netrw by dirvish
@@ -114,7 +112,7 @@ command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 
-" vim-session
+""" vim-session
 " Where to save sessions.
 let g:session_directory = $MYVIMCACHE . 'session'
 " not display prompt for loading last/default session when Vim starts
@@ -134,5 +132,5 @@ let g:session_command_aliases = 1
 " Save this global variables.
 let g:session_persist_globals = ['&path', '&wildignore']
 
-" UltiSnips
+""" UltiSnips
 " let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'

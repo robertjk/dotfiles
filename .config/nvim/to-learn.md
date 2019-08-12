@@ -183,7 +183,7 @@ Tools
 Options
 -------
 
-- [ ] :set option? - check option value
+- [x] :set option? - check option value
 - [ ] :set option! - toggle option
 - [ ] :set option& - set default value
 - [ ] :setlocal - set only for current window or buffer
