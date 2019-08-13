@@ -20,18 +20,38 @@ if test -n "$ncolors" && test $ncolors -gt 8; then
 fi
 
 # Prompt color variables
-T_BROWN="\[$(tput setaf 3)\]"
+T_BLACK="\[$(tput setaf 0)\]"
+T_RED="\[$(tput setaf 1)\]"
+T_GREEN="\[$(tput setaf 2)\]"
+T_YELLOW="\[$(tput setaf 3)\]"
 T_BLUE="\[$(tput setaf 4)\]"
-T_PINK="\[$(tput setaf 5)\]"
+T_MAGENTA="\[$(tput setaf 5)\]"
+T_CYAN="\[$(tput setaf 6)\]"
 T_WHITE="\[$(tput setaf 7)\]"
-T_VIOLET="\[$(tput setaf 13)\]"
+T_BLACK_BRIGHT="\[$(tput setaf 8)\]"
+T_RED_BRIGHT="\[$(tput setaf 9)\]"
+T_GREEN_BRIGHT="\[$(tput setaf 10)\]"
+T_YELLOW_BRIGHT="\[$(tput setaf 11)\]"
+T_BLUE_BRIGHT="\[$(tput setaf 12)\]"
+T_MAGENTA_BRIGHT="\[$(tput setaf 13)\]"
+T_CYAN_BRIGHT="\[$(tput setaf 14)\]"
+T_WHITE_BRIGHT="\[$(tput setaf 15)\]"
+T_BLACK_DARK="\[$(tput setaf 16)\]"
+T_BLUE_DARK5="\[$(tput setaf 17)\]"
+T_BLUE_DARK4="\[$(tput setaf 18)\]"
+T_BLUE_DARK3="\[$(tput setaf 19)\]"
+T_BLUE_DARK2="\[$(tput setaf 20)\]"
+T_BLUE_DARK1="\[$(tput setaf 21)\]"
 T_RESET="\[$(tput sgr0)\]"
 
 # Prompt format:
 #
 # user@hostname: path_relative_to_working_directory
 # $
-PS1="[${T_BLUE}\u@\h${T_RESET}: ${T_BROWN}\w${T_RESET}]\n${T_WHITE}\$${T_RESET} "
+PS1="[${T_BLUE}\u@\h${T_RESET}: ${T_YELLOW}\w${T_RESET}]\n${T_WHITE}\$${T_RESET} "
+
+# Add new line before every prompt
+PROMPT_COMMAND="printf '\n';$PROMPT_COMMAND"
 
 # Adding colors to man pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
