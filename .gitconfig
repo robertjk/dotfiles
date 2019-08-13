@@ -1,16 +1,42 @@
 [user]
     email = no-cheating@autistici.org
     name = Robert J. Kusznier
+
 [core]
     editor = nvim
+    ; Global gitignore (applied to all repositories)
     excludesFile = ~/.git.d/gitignore-global
+
+[commit]
+    ; Show full diff when editing commit message
+    verbose = true
+
 [push]
     default = simple
+
 [merge]
-    tool = vimdiff
+    ; Tool used by `git mergetool`
+    tool = nvim-diff4
+
 [diff]
-    tool = vimdiff
+    ; Tool used by `git difftool`
+    tool = nvim-diff2
+
+[mergetool "nvim-diff4"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[mergetool "nvim-fugitive-diff3"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+    ; Abort operation if editor exited with non-zero status
+    trustExitCode = true
+
+[difftool "nvim-diff-2"]
+    cmd = nvim -d $LOCAL $REMOTE
+    ; Abort operation if editor exited with non-zero status
+    trustExitCode = true
+
 [alias]
+    ; Aliases for `git` commands
     status-short = status --short
     statuss = status-short
     log-oneline = log --pretty=format:\"%C(auto)%h %d %s %C(green)(%an) %C(italic cyan)[%ad]\" --date=relative --graph
@@ -26,5 +52,7 @@
     delete-merged-branches = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d
     config-list-all = config --list
     config-list-all-origin = config --list --show-origin
+
 [init]
-    templateDir = /home/robert/.git.d/template
+    ; This template will be copied to every new repository created by `git init`
+    templateDir = ~/.git.d/template
