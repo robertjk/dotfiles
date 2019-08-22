@@ -38,6 +38,9 @@ endif
 " Use TrueColor in terminal
 set termguicolors
 
+" Enable mouse support in all modes
+set mouse=a
+
 " Plus register is the default register
 set clipboard^=unnamedplus
 
@@ -48,8 +51,8 @@ set background=dark
 set number
 " Highlight current line number
 set cursorline
-" Display vertical line/edge at 80 character
-set colorcolumn=80
+" Display vertical line/edge at 81 character
+set colorcolumn=81
 
 " Search ignoring case unless there is an uppercase character (smartsearch)
 set ignorecase smartcase
@@ -63,9 +66,6 @@ set showmatch
 set matchtime=7   " Highlight matching paren (in insert) for that amout of 100ms.
 
 " Indentation
-"
-" Use spaces for all indentation and set the size of that indentation
-"
 " Only default settings, which are overwritten per§ filetype in after/ftplugin
 "
 " Pressing Tab button inserts spaces (instead of Tab character)

@@ -3,7 +3,6 @@
 "
 
 " TODO (Plugins to check out):
-" * Valloric/YouCompleteMe
 " * Shougo/deoplete.nvim
 
 " Plug (plugin manager) configuration listing all the plugins.
@@ -37,7 +36,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'vim-airline/vim-airline-themes'    " Airline themes
     Plug 'dense-analysis/ale'                " Asynchronous Lint Engine (ALE)
     Plug 'tpope/vim-commentary'              " Commentary
-    "Plug 'suy/vim-context-commentstring'     " Context commentstring
+    Plug 'suy/vim-context-commentstring'     " Context commentstring
     Plug 'ctrlpvim/ctrlp.vim'                " ctrlp (fuzzy finder)
     Plug 'FelikZ/ctrlp-py-matcher'           " ctrlp matcher
     Plug 'justinmk/vim-dirvish'              " Dirvish (file explorer)
@@ -57,6 +56,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " Plug 'honza/vim-snippets'              " Snippets for UltiSnips
     Plug 'tpope/vim-unimpaired'              " Unimpaired (some hotkeys)
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
+    Plug 'Valloric/YouCompleteMe'            " You Complete Me
 call plug#end()
 
 """ Airline
@@ -69,6 +69,8 @@ let g:airline_theme = 'jellybeans'
 " Lint only when saving file
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
+" Do not highlight area with error (only set sign marker)
+let g:ale_set_highlights = 0
 
 """ Color theme (here, because themes are imported as plugins)
 colorscheme jellybeans
