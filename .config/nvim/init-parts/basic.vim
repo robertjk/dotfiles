@@ -68,15 +68,18 @@ set matchtime=7   " Highlight matching paren (in insert) for that amout of 100ms
 " Indentation
 " Only default settings, which are overwritten per§ filetype in after/ftplugin
 "
-" Pressing Tab button inserts spaces (instead of Tab character)
+" Tab characters are never inserted, instead are always expanded to spaces (of
+" size tabstop)
 set expandtab      
-" Amount of whitespace to insert on indentation command (e.g. >>)
-set shiftwidth=4
-" Number of spaces to display as Tab character
+" Number of spaces to display for the Tab character
 set tabstop=4
-" Tab size automatically inserted when editing. Negative value will use
-" shiftwidth
-set softtabstop=4
+" Amount of whitespace to insert on indentation command (e.g. pressing TAB, >>).
+" 0 uses tabstop value.
+set shiftwidth=0
+" Tab size automatically inserted when editing, also how many spaces can a
+" backspace deletes at a single press. Should be equal to shiftwidth. Negative
+" value uses shiftwidth value.
+set softtabstop=-1
 
 " When breaking lines, do not break in the middle of words
 set linebreak
