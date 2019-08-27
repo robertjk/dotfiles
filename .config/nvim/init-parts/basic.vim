@@ -70,7 +70,7 @@ set matchtime=7   " Highlight matching paren (in insert) for that amout of 100ms
 "
 " Tab characters are never inserted, instead are always expanded to spaces (of
 " size tabstop)
-set expandtab      
+set expandtab
 " Number of spaces to display for the Tab character
 set tabstop=4
 " Amount of whitespace to insert on indentation command (e.g. pressing TAB, >>).
@@ -90,8 +90,9 @@ set tags+=.git/tags
 " How pressing Tab works in autocomplete mode
 set wildmode=list:longest,full
 
-" Sets characters to display in place of Tab and EOL
-set listchars=tab:▸\ ,eol:¬
+" Sets characters to display in list mode: in place of Tab, EOL, trailing
+" whitespace and for lines going out of screen with wrapping off
+set listchars=tab:▸\ ,eol:¬,trail:.,extends:>
 
 " Set local leader key.
 let maplocalleader='_'

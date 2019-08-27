@@ -88,7 +88,7 @@ let g:ctrlp_match_window = 'results:1000'
 " ctrlp will work in current directory by default
 let g:ctrlp_working_path_mode = 'd'
 " Include hidden files and directories
-let g:ctrlp_show_hidden = 1 
+let g:ctrlp_show_hidden = 1
 " Set maximum number of files to scan to unlimited
 let g:ctrlp_max_files = 0
 " Persist cache between sessions
@@ -101,9 +101,11 @@ if !has('python')
 else
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 endif
+" Directories to ignore
+set wildignore+=*/node_modules/*,*/.git/*
 " Custom mappings
 nnoremap <Leader><C-p>d :CtrlP ~/documents<CR>
-nnoremap <Leader><C-p>v :CtrlP ~/.vim<CR>
+nnoremap <Leader><C-p>v :CtrlP ~/.config/nvim<CR>
 
 """ Dirvish
 " Display directories first, then files

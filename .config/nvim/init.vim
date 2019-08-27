@@ -10,6 +10,7 @@ source ~/.config/nvim/init-parts/plugin.vim
 source ~/.config/nvim/init-parts/html-text-object-linewise.vim
 source ~/.config/nvim/init-parts/open-file-on-last-position.vim
 source ~/.config/nvim/init-parts/search-match-blink.vim
+source ~/.config/nvim/init-parts/trim-trailing-whitespace.vim
 
 " Set mappings and abbreviations
 source ~/.config/nvim/init-parts/abbreviation.vim
