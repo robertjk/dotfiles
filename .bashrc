@@ -46,9 +46,19 @@ T_RESET="\[$(tput sgr0)\]"
 
 # Prompt format:
 #
-# user@hostname: path_relative_to_working_directory
+# user as hostname path_relative_to_working_directory on git_branch
 # $
-PS1="[${T_BLUE}\u@\h${T_RESET}: ${T_YELLOW}\w${T_RESET}]\n${T_WHITE}\$${T_RESET} "
+git_prompt() {
+    local branch=`git branch --show-current 2> /dev/null`
+    if [ -n "$branch" ]
+    then
+        # Green and reset. Not using variables because there are issues with
+        # escaping \[ and \]
+        branch=" on $(tput setaf 2)${branch}$(tput sgr0)"
+    fi
+    echo "$branch"
+}
+PS1="${T_YELLOW}\u${T_RESET} at ${T_YELLOW_BRIGHT}\h${T_RESET} in ${T_BLUE}\w${T_RESET}\$(git_prompt)\n${T_WHITE}\$${T_RESET} "
 
 # Add new line before every prompt
 PROMPT_COMMAND="printf '\n';$PROMPT_COMMAND"
