@@ -56,3 +56,7 @@
 [init]
     ; This template will be copied to every new repository created by `git init`
     templateDir = ~/.git.d/template
+
+[include]
+    ; Additional file with machine-local configuration
+    path = ~/.gitconfig.local
