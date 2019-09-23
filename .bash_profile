@@ -29,4 +29,4 @@ fi
 
 
 # Set React Native debugger to React Native Debugger
-export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8001'"
+export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081'"
