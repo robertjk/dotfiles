@@ -45,6 +45,8 @@
     logf = log-files
     log-stat = log1 --stat
     logs = log-stat
+    log-local-not-remote = log-oneline @{u}..HEAD
+    log-remote-not-local = log-oneline HEAD..@{u}
     last = log-oneline -1
     diff-staged = diff --staged
     diffs = diff-staged
