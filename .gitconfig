@@ -45,8 +45,7 @@
     logf = log-files
     log-stat = log1 --stat
     logs = log-stat
-    log-local-not-remote = log-oneline @{u}..HEAD
-    log-remote-not-local = log-oneline HEAD..@{u}
+    log-difference = log-oneline --left-right HEAD...@{u}
     last = log-oneline -1
     diff-staged = diff --staged
     diffs = diff-staged
@@ -58,3 +57,7 @@
 [include]
     ; Additional file with machine-local configuration
     path = ~/.gitconfig.local
+
+[rerere]
+    ; Track and remember conflict resolutions
+	enabled = true
