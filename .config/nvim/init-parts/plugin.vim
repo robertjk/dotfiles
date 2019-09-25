@@ -9,15 +9,17 @@
 " Specify directory for plugins.
 call plug#begin($MYVIMCACHE . 'plugged')
     " Language/filetype support
+    Plug 'sheerun/vim-polyglot'              " Polyglot language pack
     Plug 'hail2u/vim-css3-syntax'            " CSS 3
-    Plug 'tpope/vim-git'                     " Git
-    Plug 'PotatoesMaster/i3-vim-syntax'      " i3 Window Manager
-    Plug 'pangloss/vim-javascript'           " JavaScript
-    Plug 'mxw/vim-jsx'                       " JSX
-    Plug 'othree/html5.vim'                  " HTML 5
-    Plug 'cakebaker/scss-syntax.vim'         " Sass (SCSS)
-    Plug 'leafgarland/typescript-vim'        " Typescript
-    Plug 'posva/vim-vue'                     " Vue.js
+    " The ones that I've been using before Polyglot:
+    " - tpope/vim-git
+    " - PotatoesMaster/i3-vim-syntax
+    " - pangloss/vim-javascript
+    " - othree/html5.vim
+    " - cakebaker/scss-syntax.vim
+    " - leafgarland/typescript-vim
+    " - mxw/vim-jsx
+    " - posva/vim-vue
 
     " Color schemes
     Plug 'sjl/badwolf'                                    " Bad Wolf
@@ -115,6 +117,9 @@ let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+
+""" Polyglot
+let g:polyglot_disabled = []
 
 """ vim-session
 " Where to save sessions.
