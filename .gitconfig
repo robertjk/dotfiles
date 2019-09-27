@@ -54,10 +54,6 @@
     config-list-all = config --list
     config-list-all-origin = config --list --show-origin
 
-[include]
-    ; Additional file with machine-local configuration
-    path = ~/.gitconfig.local
-
 [rerere]
     ; Track and remember conflict resolutions
 	enabled = true
