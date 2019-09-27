@@ -49,6 +49,8 @@
     last = log-oneline -1
     diff-staged = diff --staged
     diffs = diff-staged
+    branch-master = checkout --no-track origin/master -b
+    push-new-branch = push --set-upstream origin HEAD
     unstage = reset HEAD
     delete-merged-branches = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d
     config-list-all = config --list
