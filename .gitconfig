@@ -45,13 +45,13 @@
     logf = log-files
     log-stat = log1 --stat
     logs = log-stat
-    log-difference = log-oneline --left-right HEAD...@{u}
+    log-diff-upstream = log-oneline --left-right HEAD...@{u}
+    log-diff-master = log-oneline --left-right HEAD...origin/master
     last = log-oneline -1
     diff-staged = diff --staged
     diffs = diff-staged
     branch-master = checkout --no-track origin/master -b
-    push-new-branch = push --set-upstream origin HEAD
-    unstage = reset HEAD
+    push-new = push --set-upstream origin HEAD
     delete-merged-branches = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d
     config-list-all = config --list
     config-list-all-origin = config --list --show-origin
