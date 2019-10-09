@@ -24,9 +24,9 @@ nnoremap <Leader>tvv  :tabedit $MYVIMRC<CR>
 nnoremap <Leader>evb  :edit    $MYVIMCONFIG/init-parts/basic.vim<CR>
 nnoremap <Leader>spvb :vsplit  $MYVIMCONFIG/init-parts/basic.vim<CR>
 nnoremap <Leader>tvb  :tabedit $MYVIMCONFIG/init-parts/basic.vim<CR>
-nnoremap <Leader>evm  :edit    $MYVIMCONFIG/init-parts/mapping.vim<CR>
-nnoremap <Leader>spvm :vsplit  $MYVIMCONFIG/init-parts/mapping.vim<CR>
-nnoremap <Leader>tvm  :tabedit $MYVIMCONFIG/init-parts/mapping.vim<CR>
+nnoremap <Leader>evm  :edit    $MYVIMCONFIG/init-parts/mappings.vim<CR>
+nnoremap <Leader>spvm :vsplit  $MYVIMCONFIG/init-parts/mappings.vim<CR>
+nnoremap <Leader>tvm  :tabedit $MYVIMCONFIG/init-parts/mappings.vim<CR>
 nnoremap <Leader>evp  :edit    $MYVIMCONFIG/init-parts/plugin.vim<CR>
 nnoremap <Leader>spvp :vsplit  $MYVIMCONFIG/init-parts/plugin.vim<CR>
 nnoremap <Leader>tvp  :tabedit $MYVIMCONFIG/init-parts/plugin.vim<CR>
