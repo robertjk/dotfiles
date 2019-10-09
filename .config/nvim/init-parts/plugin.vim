@@ -85,9 +85,9 @@ let g:ale_linters = {
 \   'vue': ['eslint']
 \}
 let g:ale_fixers = {
-\    'javascript': ['eslint'],
+\    'javascript': ['prettier'],
 \    'typescript': ['prettier'],
-\    'vue': ['eslint'],
+\    'vue': ['prettier'],
 \    'scss': ['prettier'],
 \    'html': ['prettier']
 \}
