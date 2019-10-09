@@ -47,7 +47,7 @@
     logs = log-stat
     log-diff-upstream = log-oneline --left-right HEAD...@{u}
     log-diff-master = log-oneline --left-right HEAD...origin/master
-    last = log-oneline -1
+    last = log -1
     diff-staged = diff --staged
     diffs = diff-staged
     branch-master = checkout --no-track origin/master -b
