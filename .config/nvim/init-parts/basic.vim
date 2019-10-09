@@ -84,9 +84,6 @@ set softtabstop=-1
 " When breaking lines, do not break in the middle of words
 set linebreak
 
-" Look for tags file in .git/ directory
-set tags+=.git/tags
-
 " How pressing Tab works in autocomplete mode
 set wildmode=list:longest,full
 

@@ -127,7 +127,7 @@ let g:ctrlp_max_files = 0
 " Persist cache between sessions
 let g:ctrlp_clear_cache_on_exit = 0
 " Extensions to use
-let g:ctrlp_extensions = ['tag']
+let g:ctrlp_extensions = []
 " PyMatcher function for CtrlP
 if !has('python')
     echo 'In order to use pymatcher plugin, you need +python compiled vim'
