@@ -24,6 +24,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " - posva/vim-vue
     Plug 'sheerun/vim-polyglot'              " Polyglot language pack
     Plug 'hail2u/vim-css3-syntax'            " CSS 3
+    Plug 'Quramy/tsuquyomi'                  " TypeScript IDE support
 
     " Color schemes
     Plug 'sjl/badwolf'                                    " Bad Wolf
@@ -62,7 +63,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " Plug 'honza/vim-snippets'              " Snippets for UltiSnips
     Plug 'tpope/vim-unimpaired'              " Unimpaired (some hotkeys)
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
-    Plug 'Valloric/YouCompleteMe'            " You Complete Me
+    Plug 'Valloric/YouCompleteMe'            " YouCompleteMe
 call plug#end()
 
 " ------------------------------------------------------------------------------
@@ -81,7 +82,7 @@ let g:airline_theme = 'jellybeans'
 " Configure linters and auto-fixers for particular filetypes
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'tslint'],
+\   'typescript': ['tsserver', 'eslint'],
 \   'vue': ['eslint']
 \}
 let g:ale_fixers = {
@@ -186,3 +187,13 @@ let g:session_persist_globals = ['&path', '&wildignore']
 " UltiSnips
 " ------------------------------------------------------------------------------
 " let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+
+" ------------------------------------------------------------------------------
+" YouCompleteMe
+" ------------------------------------------------------------------------------
+
+" Define what tokens trigger autocompletion
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
