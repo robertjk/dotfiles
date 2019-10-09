@@ -1,9 +1,10 @@
-"
+" ------------------------------------------------------------------------------
 " Add function to remove trailing whitespace
 "
 " Author: Drew Neil
 " URL: http://vimcasts.org/episodes/tidying-whitespace/
 " Modified by: Robert J. Kusznier
+" ------------------------------------------------------------------------------
 
 function! <SID>TrimTrailingWhitespace()
     " Preparation: save last search, and cursor position.

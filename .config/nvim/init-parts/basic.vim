@@ -1,6 +1,6 @@
-"
+" ------------------------------------------------------------------------------
 " Basic vim settings.
-"
+" ------------------------------------------------------------------------------
 
 " Remove this system directory with C files from the path
 set path-=/usr/include

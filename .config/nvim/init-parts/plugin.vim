@@ -1,16 +1,18 @@
-"
+" ------------------------------------------------------------------------------
 " Plugins
 "
+" (TODO) Plugins to check out:
+" - Shougo/deoplete.nvim
+" ------------------------------------------------------------------------------
 
-" TODO (Plugins to check out):
-" * Shougo/deoplete.nvim
-
+" ------------------------------------------------------------------------------
 " Plug (plugin manager) configuration listing all the plugins.
+" ------------------------------------------------------------------------------
+
 " Specify directory for plugins.
 call plug#begin($MYVIMCACHE . 'plugged')
     " Language/filetype support
-    Plug 'sheerun/vim-polyglot'              " Polyglot language pack
-    Plug 'hail2u/vim-css3-syntax'            " CSS 3
+    "
     " The ones that I've been using before Polyglot:
     " - tpope/vim-git
     " - PotatoesMaster/i3-vim-syntax
@@ -20,6 +22,8 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " - leafgarland/typescript-vim
     " - mxw/vim-jsx
     " - posva/vim-vue
+    Plug 'sheerun/vim-polyglot'              " Polyglot language pack
+    Plug 'hail2u/vim-css3-syntax'            " CSS 3
 
     " Color schemes
     Plug 'sjl/badwolf'                                    " Bad Wolf
@@ -61,7 +65,10 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'Valloric/YouCompleteMe'            " You Complete Me
 call plug#end()
 
-""" Airline
+" ------------------------------------------------------------------------------
+" Airline
+" ------------------------------------------------------------------------------
+
 let g:airline_theme = 'jellybeans'
 " Tabline extension - display all buffers in tab space when only one tab open
 " let g:airline#extensions#tabline#enabled = 1
@@ -74,7 +81,10 @@ let g:ale_lint_on_insert_leave = 0
 " Do not highlight area with error (only set sign marker)
 let g:ale_set_highlights = 0
 
-""" Color theme (here, because themes are imported as plugins)
+" ------------------------------------------------------------------------------
+" Color theme (here, because themes are imported as plugins)
+" ------------------------------------------------------------------------------
+
 colorscheme jellybeans
 " Jellybeans settings
 let g:jellybeans_use_term_italics = 1
@@ -84,7 +94,10 @@ let g:jellybeans_overrides = {
     \ 'WildMenu':   {'guifg': 'f0a0c0', 'guibg': '302028', 'attr': 'italic'},
 \}
 
-""" ctrlp
+" ------------------------------------------------------------------------------
+" ctrlp
+" ------------------------------------------------------------------------------
+
 " Set maximum number of results to unlimited
 let g:ctrlp_match_window = 'results:1000'
 " ctrlp will work in current directory by default
@@ -109,7 +122,10 @@ set wildignore+=*/node_modules/*,*/.git/*
 nnoremap <Leader><C-p>d :CtrlP ~/documents<CR>
 nnoremap <Leader><C-p>v :CtrlP ~/.config/nvim<CR>
 
-""" Dirvish
+" ------------------------------------------------------------------------------
+" Dirvish
+" ------------------------------------------------------------------------------
+
 " Display directories first, then files
 let g:dirvish_mode = ':sort ,^.*[\/],'
 " Overwrite netrw by dirvish
@@ -118,10 +134,17 @@ command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 
-""" Polyglot
+" ------------------------------------------------------------------------------
+" Polyglot
+" ------------------------------------------------------------------------------
+
+" List of plugins in the pack to not use
 let g:polyglot_disabled = []
 
-""" vim-session
+" ------------------------------------------------------------------------------
+" vim-session
+" ------------------------------------------------------------------------------
+
 " Where to save sessions.
 let g:session_directory = $MYVIMCACHE . 'session'
 " not display prompt for loading last/default session when Vim starts
@@ -141,5 +164,7 @@ let g:session_command_aliases = 1
 " Save this global variables.
 let g:session_persist_globals = ['&path', '&wildignore']
 
-""" UltiSnips
+" ------------------------------------------------------------------------------
+" UltiSnips
+" ------------------------------------------------------------------------------
 " let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'

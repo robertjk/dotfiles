@@ -1,13 +1,20 @@
-"
+" ------------------------------------------------------------------------------
 " Various helpful mappings.
-"
+" ------------------------------------------------------------------------------
 
+" ------------------------------------------------------------------------------
+" Mappings for (un)learning.
+"
 " HINT: To disable a key (e.g. to temporarily force yourself to not use it for
 " changing habits) map it to <Nop> (no operation).
+" ------------------------------------------------------------------------------
 
-" Mappings for (un)learning.
 " To be removed when (un)learnt.
-" map! <BS> <Nop>
+map! <BS> <Nop>
+
+" ------------------------------------------------------------------------------
+" Regular mappings
+" ------------------------------------------------------------------------------
 
 " Map editing commonly accessed files to <Leader><file-key>
 " Vim
