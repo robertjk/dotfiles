@@ -74,10 +74,28 @@ let g:airline_theme = 'jellybeans'
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-""" Ale
+" ------------------------------------------------------------------------------
+" Ale
+" ------------------------------------------------------------------------------
+
+" Configure linters and auto-fixers for particular filetypes
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'tslint'],
+\   'vue': ['eslint']
+\}
+let g:ale_fixers = {
+\    'javascript': ['eslint'],
+\    'typescript': ['prettier'],
+\    'vue': ['eslint'],
+\    'scss': ['prettier'],
+\    'html': ['prettier']
+\}
 " Lint only when saving file
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
+" Apply auto fixing on save
+let g:ale_fix_on_save = 1
 " Do not highlight area with error (only set sign marker)
 let g:ale_set_highlights = 0
 
