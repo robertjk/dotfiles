@@ -53,12 +53,42 @@ nnoremap <Leader>sov :source $MYVIMRC<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" Windows
+nnoremap <C-W>vn :vnew<CR>
+nnoremap <C-W><C-V>n :vnew<CR>
+nnoremap <C-W><C-V><C-N> :vnew<CR>
+
+" Tabs
+nnoremap <C-T>h :tabprev<CR>
+nnoremap <C-T>l :tabnext<CR>
+nnoremap <C-T>H :tabmove -1<CR>
+nnoremap <C-T>L :tabmove +1<CR>
+nnoremap <C-T>n :tabnew<CR>
+nnoremap <C-T>c :tabclose<CR>
+nnoremap <C-T>q :tabclose<CR>
+nnoremap <C-T>0 :tablast<CR>
+nnoremap <C-T>1 :tabfirst<CR>
+nnoremap <C-T>2 :2 tabnext<CR>
+nnoremap <C-T>3 :3 tabnext<CR>
+nnoremap <C-T>4 :4 tabnext<CR>
+nnoremap <C-T>5 :5 tabnext<CR>
+nnoremap <C-T>6 :6 tabnext<CR>
+nnoremap <C-T>7 :7 tabnext<CR>
+nnoremap <C-T>8 :8 tabnext<CR>
+nnoremap <C-T>9 :9 tabnext<CR>
+
 " Displaying whitespace characters.
 " Maps toggling between showing whitespace to <Leader>.
 nmap <Leader>l :set list!<CR>
 
 " %% in command line inserts path of current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Edit in current directory
+map <leader>ew :edit %%
+map <leader>es :split %%
+map <leader>ev :vsplit %%
+map <leader>et :tabedit %%
 
 " Map :nohlsearch (disable search highlight) to <Ctrl-l>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
