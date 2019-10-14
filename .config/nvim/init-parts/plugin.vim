@@ -3,6 +3,7 @@
 "
 " (TODO) Plugins to check out:
 " - Shougo/deoplete.nvim
+" - neoclide/coc.nvim (intellisense)
 " ------------------------------------------------------------------------------
 
 " ------------------------------------------------------------------------------
@@ -22,9 +23,10 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " - leafgarland/typescript-vim
     " - mxw/vim-jsx
     " - posva/vim-vue
-    Plug 'sheerun/vim-polyglot'              " Polyglot language pack
-    Plug 'hail2u/vim-css3-syntax'            " CSS 3
-    Plug 'Quramy/tsuquyomi'                  " TypeScript IDE support
+    Plug 'sheerun/vim-polyglot'                " Polyglot language pack
+    Plug 'hail2u/vim-css3-syntax'              " CSS 3
+    Plug 'Quramy/tsuquyomi'                    " TypeScript IDE support
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
 
     " Color schemes
     Plug 'sjl/badwolf'                                    " Bad Wolf
@@ -117,8 +119,12 @@ let g:jellybeans_overrides = {
 " ctrlp
 " ------------------------------------------------------------------------------
 
-" Set maximum number of results to unlimited
+" Which command to start when pressing Ctrl + P
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
+" Set maximum number of results
 let g:ctrlp_match_window = 'results:1000'
+" How to handle situation when opening a file already opened in another window
+let g:ctrlp_switch_buffer = 'et'
 " ctrlp will work in current directory by default
 let g:ctrlp_working_path_mode = 'd'
 " Include hidden files and directories
@@ -138,7 +144,7 @@ endif
 " Directories to ignore
 set wildignore+=*/node_modules/*,*/.git/*
 " Custom mappings
-nnoremap <Leader><C-p>d :CtrlP ~/documents<CR>
+nnoremap <Leader><C-p>d :CtrlP ~/Documents<CR>
 nnoremap <Leader><C-p>v :CtrlP ~/.config/nvim<CR>
 
 " ------------------------------------------------------------------------------
@@ -182,6 +188,12 @@ let g:session_default_to_last = 1
 let g:session_command_aliases = 1
 " Save this global variables.
 let g:session_persist_globals = ['&path', '&wildignore']
+
+" ------------------------------------------------------------------------------
+" tsuquyomi
+" ------------------------------------------------------------------------------
+
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 " ------------------------------------------------------------------------------
 " UltiSnips
