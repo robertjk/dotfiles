@@ -81,8 +81,21 @@ set shiftwidth=0
 " value uses shiftwidth value.
 set softtabstop=-1
 
-" When breaking lines, do not break in the middle of words
+" Soft wrapping
+"
+" Dot not break line in the middle of words
 set linebreak
+" Prefix each continuation line with this character
+set showbreak=…
+" Indent reach broken line to the same level as the beginning of the line
+set breakindent
+
+" Hard wrapping
+"
+" Maximum width of the line
+set textwidth=80
+" Options used when wrapping
+set formatoptions+=tron1
 
 " How pressing Tab works in autocomplete mode
 set wildmode=list:longest,full

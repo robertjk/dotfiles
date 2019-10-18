@@ -66,6 +66,7 @@ nnoremap <C-T>L :tabmove +1<CR>
 nnoremap <C-T>n :tabnew<CR>
 nnoremap <C-T>c :tabclose<CR>
 nnoremap <C-T>q :tabclose<CR>
+nnoremap <C-T>o :tabonly<CR>
 nnoremap <C-T>0 :tablast<CR>
 nnoremap <C-T>1 :tabfirst<CR>
 nnoremap <C-T>2 :2 tabnext<CR>

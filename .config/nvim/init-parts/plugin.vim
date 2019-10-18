@@ -54,9 +54,11 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'tpope/vim-eunuch'                  " Eunuch (shell commands)
     Plug 'tpope/vim-fugitive'                " Fugitive (Git)
     Plug 'sjl/gundo.vim'                     " Gundo (visual undo tree)
-    Plug 'chrisbra/matchit'                  " Matchit
+    Plug 'andymass/vim-matchup'              " Matchup (Matchit replacement)
+    Plug 'tpope/vim-repeat'                  " Repeat
     Plug 'xolox/vim-session'                 " Session
     Plug 'xolox/vim-misc'                    " (Dependency for vim-session)
+    Plug 'tpope/vim-speeddating'             " Speeddating (improving C-A, C-X)
     Plug 'tpope/vim-surround'                " Surround
     Plug 'godlygeek/tabular'                 " Tabular
     Plug 'kana/vim-textobj-entire'           " Textobj entire (buffer)
@@ -158,6 +160,13 @@ let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+
+" ------------------------------------------------------------------------------
+" Matchup
+" ------------------------------------------------------------------------------
+
+let g:matchup_surround_enabled = 1
+let g:matchup_transmute_enabled = 1
 
 " ------------------------------------------------------------------------------
 " Polyglot
