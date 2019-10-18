@@ -50,7 +50,7 @@
     last = log -1
     diff-staged = diff --staged
     diffs = diff-staged
-    branch-master = checkout --no-track origin/master -b
+    branch-master = "!f() { git fetch; git checkout --no-track -b $1 origin/master; }; f"
     push-new = push --set-upstream origin HEAD
     delete-merged-branches = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d
     config-list-all = config --list
