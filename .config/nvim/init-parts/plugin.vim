@@ -1,13 +1,12 @@
-" ------------------------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " Plugins
 "
-" (TODO) Plugins to check out:
-" - Shougo/deoplete.nvim
-" - neoclide/coc.nvim (intellisense)
-" ------------------------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " ------------------------------------------------------------------------------
-" Plug (plugin manager) configuration listing all the plugins.
+" Plug (plugin manager) configuration, listing all the plugins.
 " ------------------------------------------------------------------------------
 
 " Specify directory for plugins.
@@ -70,6 +69,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'Valloric/YouCompleteMe'            " YouCompleteMe
 call plug#end()
 
+
 " ------------------------------------------------------------------------------
 " Airline
 " ------------------------------------------------------------------------------
@@ -78,6 +78,7 @@ let g:airline_theme = 'jellybeans'
 " Tabline extension - display all buffers in tab space when only one tab open
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
+
 
 " ------------------------------------------------------------------------------
 " Ale
@@ -104,6 +105,7 @@ let g:ale_fix_on_save = 1
 " Do not highlight area with error (only set sign marker)
 let g:ale_set_highlights = 0
 
+
 " ------------------------------------------------------------------------------
 " Color theme (here, because themes are imported as plugins)
 " ------------------------------------------------------------------------------
@@ -116,6 +118,7 @@ let g:jellybeans_overrides = {
     \ 'StatusLine': {'guifg': '000000', 'guibg': 'aaaaaa', 'attr': ''},
     \ 'WildMenu':   {'guifg': 'f0a0c0', 'guibg': '302028', 'attr': 'italic'},
 \}
+
 
 " ------------------------------------------------------------------------------
 " ctrlp
@@ -149,6 +152,7 @@ set wildignore+=*/node_modules/*,*/.git/*
 nnoremap <Leader><C-p>d :CtrlP ~/Documents<CR>
 nnoremap <Leader><C-p>v :CtrlP ~/.config/nvim<CR>
 
+
 " ------------------------------------------------------------------------------
 " Dirvish
 " ------------------------------------------------------------------------------
@@ -161,6 +165,7 @@ command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 
+
 " ------------------------------------------------------------------------------
 " Matchup
 " ------------------------------------------------------------------------------
@@ -168,12 +173,14 @@ command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args
 let g:matchup_surround_enabled = 1
 let g:matchup_transmute_enabled = 1
 
+
 " ------------------------------------------------------------------------------
 " Polyglot
 " ------------------------------------------------------------------------------
 
 " List of plugins in the pack to not use
 let g:polyglot_disabled = []
+
 
 " ------------------------------------------------------------------------------
 " vim-session
@@ -198,16 +205,19 @@ let g:session_command_aliases = 1
 " Save this global variables.
 let g:session_persist_globals = ['&path', '&wildignore']
 
+
 " ------------------------------------------------------------------------------
 " tsuquyomi
 " ------------------------------------------------------------------------------
 
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
+
 " ------------------------------------------------------------------------------
 " UltiSnips
 " ------------------------------------------------------------------------------
 " let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+
 
 " ------------------------------------------------------------------------------
 " YouCompleteMe

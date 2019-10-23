@@ -1,9 +1,12 @@
-" ------------------------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 "  Init (vimrc)
 "
 "  Configuration is split into many smaller domain-specific files. The only
 "  thing this script does is load them all in order.
-" ------------------------------------------------------------------------------
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Set Neovim files locations in variables
 let $MYVIMCONFIG = '~/.config/nvim/'
