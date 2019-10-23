@@ -1,14 +1,17 @@
+################################################################################
 #
 # ~/.bashrc
 #
+################################################################################
 
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 
-
-### Shell look
+# ------------------------------------------------------------------------------
+# Shell look
+# ------------------------------------------------------------------------------
 
 # Load dircolors values from ~/.dir_colors if using terminal supporting more
 # than 8 colors.
@@ -73,8 +76,9 @@ export LESS_TERMCAP_ue=$'\e[0m'           # end underline
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline man less pager
 
 
-
-### Shell functionality
+# ------------------------------------------------------------------------------
+# Shell functionality
+# ------------------------------------------------------------------------------
 
 # Set Vim as default editor.
 export EDITOR=nvim
@@ -87,43 +91,42 @@ HISTSIZE=10000
 stty -ixon
 
 
+# ------------------------------------------------------------------------------
+# Aliases
+# ------------------------------------------------------------------------------
 
-### Aliases
+# Utilities
+alias command-exists='command -v >/dev/null 2>&1'
 
-# Unix commands
-
-# OS dependent
-
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # Linux
-    alias ls='ls --color=auto' # Add coloring to ls
-    alias diff='diff --color=auto' # Add coloring to diff
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # OS X
-    alias ls='ls -G' # Add coloring to ls
-fi
-
-# OS independent
-
+# grep
 alias grep='grep --color=auto' # Add coloring to grep
 alias egrep='egrep --color=auto' # Add coloring to grep
 alias fgrep='fgrep --color=auto' # Add coloring to grep
 
+# ls
+alias ls='ls --color=auto'
 alias ll='ls -lFh'
 alias la='ls -lAFh'
 alias l1='ls -1F'
 
+# cp, mv, rm
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+# diff
+alias diff='diff --color=auto'
+
+# ps
 alias pse='ps -e'
 alias psf='ps -f'
 alias psef='ps -ef'
 
+# df
 alias dfsd='df -h | grep /dev/sd'
 alias dus='du -s -h'
 
+# free
 alias free='free -h'
 
 # Sudo. Required to be able to call aliased command with sudo.
@@ -135,11 +138,9 @@ alias tar-gz-extract='tar -xzvf'
 alias tar-gz-create='tar -czvf'
 
 # Pacman
-if [ -f "/etc/arch-release" ]; then
+if command-exists "pacman"; then
     alias pacman='pacman --color auto'
-    alias yay='yay --color auto'
     alias pacman-arch-upgrade='pacman -Syu'
-    alias yay-arch-upgrade='yay -Syu'
     alias pacman-remove-orphans='pacman -Rns $(pacman -Qtdq)'
     alias pacman-list-orphans='pacman -Qdt'
     # List explicitly installed packages which weren't initially installed by Arch
@@ -148,7 +149,13 @@ if [ -f "/etc/arch-release" ]; then
     alias pacman-list-last-20="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
 fi
 
-# USB media
-if type "udiskie-umount" > /dev/null 2>&1; then
-    alias media-unmount="udiskie-umount --detach"
+# Yay
+if command-exists "yay"; then
+    alias yay-arch-upgrade='yay -Syu'
+    alias yay='yay --color auto'
+fi
+
+# udiskie
+if command-exists "udiskie-umount"; then
+    alias udiskie-detach="udiskie-umount --detach"
 fi
