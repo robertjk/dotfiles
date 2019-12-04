@@ -95,7 +95,7 @@ stty -ixon
 # Aliases
 # ------------------------------------------------------------------------------
 
-# Utilities
+# Utility to check if a shell command exists on this system
 alias command-exists='command -v >/dev/null 2>&1'
 
 # grep
@@ -104,7 +104,11 @@ alias egrep='egrep --color=auto' # Add coloring to grep
 alias fgrep='fgrep --color=auto' # Add coloring to grep
 
 # ls
-alias ls='ls --color=auto'
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias ls='ls --color=auto'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='ls -G'
+fi
 alias ll='ls -lFh'
 alias la='ls -lAFh'
 alias l1='ls -1F'
@@ -115,7 +119,9 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # diff
-alias diff='diff --color=auto'
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias diff='diff --color=auto'
+fi
 
 # ps
 alias pse='ps -e'
