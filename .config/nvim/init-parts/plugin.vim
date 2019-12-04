@@ -66,7 +66,8 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " Plug 'honza/vim-snippets'              " Snippets for UltiSnips
     Plug 'tpope/vim-unimpaired'              " Unimpaired (some hotkeys)
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
-    Plug 'Valloric/YouCompleteMe'            " YouCompleteMe
+    Plug 'Valloric/YouCompleteMe',
+    \   { 'do': './install.py' }             " YouCompleteMe
 call plug#end()
 
 
