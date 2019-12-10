@@ -2,6 +2,12 @@
 #
 # ~/.bashrc
 #
+# Dependencies:
+# - Git
+# - pacman (optional)
+# - Yay (optional)
+# - udiskie (optional)
+#
 ################################################################################
 
 
@@ -53,10 +59,9 @@ T_RESET="\[$(tput sgr0)\]"
 # $
 git_prompt() {
     local branch=`git branch --show-current 2> /dev/null`
-    if [ -n "$branch" ]
-    then
-        # Green and reset. Not using variables because there are issues with
-        # escaping \[ and \]
+    if [ -n "$branch" ]; then
+        # Green colorr, then reset. Not using variables because there are issues
+        # with escaping \[ and \]
         branch=" on $(tput setaf 2)${branch}$(tput sgr0)"
     fi
     echo "$branch"
