@@ -59,3 +59,8 @@
 [rerere]
     ; Track and remember conflict resolutions
 	enabled = true
+
+; Overwrite/extend this config for work related repositories
+[includeIf "gitdir:~/programming/credijusto/"]
+    path = ~/.gitconfig.credijusto
+
