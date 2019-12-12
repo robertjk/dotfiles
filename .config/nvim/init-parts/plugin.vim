@@ -75,7 +75,10 @@ call plug#end()
 " Airline
 " ------------------------------------------------------------------------------
 
+" Color theme
 let g:airline_theme = 'jellybeans'
+" Disable displaying Git branch name
+let g:airline#extensions#branch#enabled = 0
 " Tabline extension - display all buffers in tab space when only one tab open
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
