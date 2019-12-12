@@ -95,6 +95,13 @@ HISTSIZE=10000
 # Allow to use CTRL-s to search history forward like CTRL-r does backward
 stty -ixon
 
+# Bash completion on OSX
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+    if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
+        . "/usr/local/etc/profile.d/bash_completion.sh"
+    fi
+fi
 
 # ------------------------------------------------------------------------------
 # Aliases
