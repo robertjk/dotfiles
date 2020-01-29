@@ -69,7 +69,7 @@ set showmatch
 set matchtime=7   " Highlight matching paren (in insert) for that amout of 100ms.
 
 " Indentation
-" Only default settings, which are overwritten per§ filetype in after/ftplugin
+" Only default settings, which are overwritten per filetype in after/ftplugin
 "
 " Tab characters are never inserted, instead are always expanded to spaces (of
 " size tabstop)
