@@ -22,10 +22,12 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " - leafgarland/typescript-vim
     " - mxw/vim-jsx
     " - posva/vim-vue
-    Plug 'sheerun/vim-polyglot'                " Polyglot language pack
-    Plug 'hail2u/vim-css3-syntax'              " CSS 3
-    Plug 'Quramy/tsuquyomi'                    " TypeScript IDE support
-    Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Dependency for tsuquyomi
+    Plug 'sheerun/vim-polyglot'                    " Polyglot language pack
+    Plug 'hail2u/vim-css3-syntax'                  " CSS 3
+                                                   " Styled components
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'Quramy/tsuquyomi'                        " TypeScript IDE support
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'}     " Dependency for tsuquyomi
 
     " Color schemes
     Plug 'sjl/badwolf'                                    " Bad Wolf
@@ -66,8 +68,8 @@ call plug#begin($MYVIMCACHE . 'plugged')
     " Plug 'honza/vim-snippets'              " Snippets for UltiSnips
     Plug 'tpope/vim-unimpaired'              " Unimpaired (some hotkeys)
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
-    Plug 'Valloric/YouCompleteMe',
-    \   { 'do': './install.py' }             " YouCompleteMe
+                                             " YouCompleteMe
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 
