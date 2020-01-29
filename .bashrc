@@ -107,6 +107,10 @@ fi
 # Aliases
 # ------------------------------------------------------------------------------
 
+# Map vim command to NeoVim. Mostly to prevent Vim configuration from being
+# created (as they are in different location than NeoVim).
+alias vim=nvim
+
 # Utility to check if a shell command exists on this system
 alias command-exists='command -v >/dev/null 2>&1'
 
