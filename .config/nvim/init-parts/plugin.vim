@@ -126,8 +126,6 @@ let g:jellybeans_overrides = {
 " ctrlp
 " ------------------------------------------------------------------------------
 
-" Which command to start when pressing Ctrl + P
-let g:ctrlp_cmd = 'CtrlPMRUFiles'
 " Set maximum number of results
 let g:ctrlp_match_window = 'results:1000'
 " How to handle situation when opening a file already opened in another window
