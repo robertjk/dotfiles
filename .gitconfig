@@ -24,6 +24,8 @@
 
 [mergetool "nvim-diff4"]
     cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+    ; Abort operation if editor exited with non-zero status
+    trustExitCode = true
 
 [mergetool "nvim-fugitive-diff3"]
 	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
@@ -39,6 +41,8 @@
     ; Aliases for `git` commands
     status-short = status --short
     statuss = status-short
+    addp = add --patch
+    addi = add --interactive
     log-oneline = log --pretty=format:\"%C(auto)%h %d %s %C(green)(%an) %C(italic cyan)[%ad]\" --date=relative --graph
     log1 = log-oneline
     log-files = log1 --name-status
@@ -63,4 +67,3 @@
 ; Overwrite/extend this config for work related repositories
 [includeIf "gitdir:~/programming/credijusto/"]
     path = ~/.gitconfig.credijusto
-
