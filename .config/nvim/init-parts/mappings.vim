@@ -102,7 +102,3 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " search including the flags)
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
-
-" Map <F6> to rebuild tag index (recursively from the current directory)
-nnoremap <F6> :!ctags -R<CR>
-noremap <F6> :!ctags -R<CR>
