@@ -102,3 +102,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " search including the flags)
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+
+" Help in vertical split
+cnoreabbrev vhelp vertical help
+cnoreabbrev vh vertical help
