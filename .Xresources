@@ -1,4 +1,3 @@
 #include ".Xresources.d/solarized"
 ! #include ".Xresources.d/jellybeans"
 #include ".Xresources.d/urxvt"
-#include ".Xresources.d/scaling"
