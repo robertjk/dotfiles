@@ -39,7 +39,7 @@ if has('gui_running')
 endif
 
 " Use TrueColor in terminal
-set termguicolors
+" set termguicolors
 
 " Enable mouse support in all modes
 set mouse=a
