@@ -15,6 +15,6 @@
 [[ $- != *i* ]] && return
 
 # Source parts of bashrc
-source "./.bash.d/shefunctionality"
+source "./.bash.d/shell_functionality"
 source "./.bash.d/shell_looks"
 source "./.bash.d/aliases"
