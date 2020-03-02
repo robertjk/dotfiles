@@ -51,6 +51,9 @@ alias psef='ps -ef'
 alias dfsd='df -h | grep /dev/sd'
 alias dus='du -s -h'
 
+# lsblk
+alias lsblk-details='lsblk --output=NAME,FSTYPE,FSVER,LABEL,PARTLABEL,MOUNTPOINT,FSAVAIL,FSUSE%'
+
 # free
 alias free='free -h'
 
