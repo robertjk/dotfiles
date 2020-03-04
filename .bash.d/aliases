@@ -87,3 +87,8 @@ fi
 if command-exists "udiskie-umount"; then
     alias udiskie-detach="udiskie-umount --detach"
 fi
+
+# Credijusto VPN
+alias vpn-credijusto-connect="sudo systemctl start openvpn-client@credijusto.service"
+alias vpn-credijusto-disconnect="sudo systemctl stop openvpn-client@credijusto.service"
+alias vpn-credijusto-status="sudo systemctl status openvpn-client@credijusto.service"
