@@ -203,10 +203,10 @@ assign [class="Inkscape"]            → workspace $workspace_graphics
 
 # Change window settings
 for_window [class="URxvt"] layout stacked
-for_window [class="Firefox"] layout tabbed
-for_window [class="Firefox" instance="Devtools"] floating enable
-for_window [class="Firefox" instance="Devtools"] resize width 600px
-for_window [class="Firefox" instance="Devtools"] resize height 500px
+for_window [class="firefoxdeveloperedition"] layout tabbed
+for_window [class="firefoxdeveloperedition" instance="Devtools"] floating enable
+for_window [class="firefoxdeveloperedition" instance="Devtools"] resize width 600px
+for_window [class="firefoxdeveloperedition" instance="Devtools"] resize height 500px
 for_window [class="Gvim"] move left
 for_window [class="Gvim"] layout tabbed
 for_window [class="Thunderbird"] layout tabbed
@@ -233,7 +233,6 @@ bar {
 
 # Applications to run automatically after i3 startup
 exec firefox-developer-edition
-exec chromium
 exec deadbeef
 exec goldendict
 exec thunderbird
