@@ -1,0 +1,64 @@
+# Alacritty terminal configuration
+#
+# See /usr/share/doc/alacritty/example/alacritty.yml for reference of all
+# options
+
+window:
+  padding:
+    x: 4
+    y: 4
+  title: Terminal
+
+scrolling:
+  history: 50000
+
+font:
+  # Some good fonts:
+  # - Adobe Source Sans Pro
+  # - DejaVu Sans Mono
+  # - Fantasque Sans Mono
+  # - Fira Code
+  # - Fira Mono
+  # - Hack
+  # - Inconsolata
+  # - Menlo
+  # - Terminus
+  normal:
+    family: Hack
+  size: 11
+
+colors:
+  # Jellybeans theme
+
+  # Default colors
+  primary:
+    background: '0x121212'
+    foreground: '0xdedede'
+
+  # Normal colors
+  normal:
+    black:   '0x929292'
+    red:     '0xe27373'
+    green:   '0x94b979'
+    yellow:  '0xffba7b'
+    blue:    '0x97bedc'
+    magenta: '0xe1c0fa'
+    cyan:    '0x00988e'
+    white:   '0xdedede'
+
+  # Bright colors
+  bright:
+    black:   '0xbdbdbd'
+    red:     '0xffa1a1'
+    green:   '0xbddeab'
+    yellow:  '0xffdca0'
+    blue:    '0xb1d8f6'
+    magenta: '0xfbdaff'
+    cyan:    '0x1ab2a8'
+    white:   '0xffffff'
+
+dynamic_title: true
+
+key_bindings:
+  # Super+Shift+Return complements Sway's Super+Return
+  - { key: Return,   mods: Super|Shift, action: SpawnNewInstance }
