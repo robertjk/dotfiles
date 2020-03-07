@@ -1,0 +1,32 @@
+################################################################################
+#
+# What to run after startup
+#
+################################################################################
+
+# TIP: Currently I don't know of any clean way of creating complex layouts
+# within a single workspace on startup. The only hacky solution I know about is
+# using timeouts with `sleep` command, e.g.:
+#
+#   sleep 0.3s && swaymsg "exec <command>"
+
+
+### Run applications
+
+exec firefox-developer-edition
+exec chromium
+
+exec $neovim
+
+exec swaymsg "workspace $workspace_terminals; layout tabbed"
+exec $term_portal_ui
+exec sleep 0.3s && $term_portal_ui_server
+exec sleep 0.6s && swaymsg 'workspace $workspace_terminals; [title="^Portal UI$"] focus'
+
+exec thunderbird
+
+
+### Set focus
+
+exec sleep 1s && swaymsg 'workspace $workspace_www'
+exec sleep 1s && swaymsg '[title="Firefox"] focus'

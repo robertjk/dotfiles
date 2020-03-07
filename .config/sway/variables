@@ -1,0 +1,32 @@
+################################################################################
+#
+# Variables
+#
+################################################################################
+
+
+# Modifier key. Mod4 - Logo (Windows) key; Mod1 - Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Preferred terminal emulator
+set $term alacritty
+
+# Preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --show=drun | swaymsg exec --
+
+# Preferred screen locker
+set $lock swaylock --daemonize
+
+# Workspaces
+set $workspace_www 1:www
+set $workspace_editor 2:editor
+set $workspace_terminals 3:terminals
+set $workspace_mail 4:mail

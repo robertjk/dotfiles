@@ -1,0 +1,35 @@
+################################################################################
+#
+# Output configuration
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+#
+################################################################################
+
+
+set $laptop_internal eDP-1
+set $external_left HDMI-A-1
+set $external_right DP-2
+
+# Output settings
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# -823 is the value to align external Dell monitors on real height of the laptop
+# screen
+output $laptop_internal pos 0 0    res 1920x1080
+output $external_left   pos 1920 0 res 1920x1080
+output $external_right  pos 3840 0 res 1920x1080
+
+# Assign workspaces to outputs
+workspace $workspace_www           output $external_left
+workspace $workspace_programming   output $external_right
+workspace $workspace_communication output $laptop_internal
+
+# Set wallpaper
+# Random
+output * bg `lswallpaper | grep "/selected/" | sort -R | head -1` fill
+# Choose specific one
+# output * bg /usr/share/backgrounds/other/endless.jpg fill

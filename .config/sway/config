@@ -1,0 +1,20 @@
+################################################################################
+#
+# sway configuration
+#
+# Read `man 5 sway` for a complete reference.
+#
+################################################################################
+
+
+include ./variables
+include ./output
+include ./idle
+include ./input
+include ./key-bindings
+include ./bar
+include ./applications
+include ./other
+include ./startup
+
+include /etc/sway/config.d/*
