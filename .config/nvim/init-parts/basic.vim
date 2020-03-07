@@ -21,7 +21,8 @@ if has('gui_running')
     " Use console dialogs for simple choices
     set guioptions+=c
 
-    " Font and it's size
+    " GUI Font and it's size.
+    " When Vim runs in terminal the font is controlled by the terminal.
     "
     " Some good fonts:
     " - Adobe Source Sans Pro
@@ -35,11 +36,11 @@ if has('gui_running')
     " - Menlo
     " - Monaco
     " - Terminus
-    set guifont=Inconsolata\ 12
+    set guifont=Hack\ 11
 endif
 
 " Use TrueColor in terminal
-" set termguicolors
+set termguicolors
 
 " Enable mouse support in all modes
 set mouse=a
