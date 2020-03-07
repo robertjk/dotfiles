@@ -27,6 +27,7 @@ set $lock swaylock --daemonize
 
 # Workspaces
 set $workspace_www 1:www
-set $workspace_editor 2:editor
-set $workspace_terminals 3:terminals
-set $workspace_mail 4:mail
+set $workspace_mail 2:mail
+set $workspace_editor 3:editor
+set $workspace_terminals 4:terminals
+set $workspace_portal 5:portal

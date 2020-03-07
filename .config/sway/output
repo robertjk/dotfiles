@@ -26,7 +26,7 @@ output $external_right  pos 3840 0 res 1920x1080
 # Assign workspaces to outputs
 workspace $workspace_www           output $external_left
 workspace $workspace_programming   output $external_right
-workspace $workspace_communication output $laptop_internal
+workspace $workspace_mail          output $laptop_internal
 
 # Set wallpaper
 # Random

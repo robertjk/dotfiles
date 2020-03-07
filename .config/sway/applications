@@ -19,9 +19,9 @@ set $term_portal_ui_server $term --title "Portal UI (Server)" --working-director
 ### Assign applications to workspaces
 
 assign [window_role="^browser$"] → workspace $workspace_www
+assign [class="Thunderbird"]     → workspace $workspace_mail
 assign [title="^Neovim$"]        → workspace $workspace_editor
-assign [title="^Portal UI"]      → workspace $workspace_terminals
-assign [class="Thunderbird"]     → workspace $workspace_communication
+assign [title="^Portal UI"]      → workspace $workspace_portal
 
 
 ### Change window settings

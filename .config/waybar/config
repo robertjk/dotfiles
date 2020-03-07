@@ -109,9 +109,10 @@
         "format": "{icon} {name}",
         "format-icons": {
             "1:www": "龜", // Icon: firefox-browser
-            "2:editor": "", // Icon: code
-            "3:terminals": "", // Icon: terminal
-            "4:mail": "", // Icon: mail
+            "2:mail": "", // Icon: mail
+            "3:editor": "", // Icon: code
+            "4:terminals": "", // Icon: terminal
+            "5:portal": "", // Icon: terminal
             "urgent": "",
             "focused": "",
             "default": ""
