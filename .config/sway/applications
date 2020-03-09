@@ -24,6 +24,7 @@ assign [title="^Neovim$"]        → workspace $workspace_editor
 assign [title="^Portal UI"]      → workspace $workspace_portal
 assign [app_id="deadbeef"]       → workspace $workspace_music
 assign [class="vlc"]             → workspace $workspace_video
+assign [class="qBittorrent"]     → workspace $workspace_torrent
 
 
 ### Change window settings

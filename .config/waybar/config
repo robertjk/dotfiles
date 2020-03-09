@@ -132,6 +132,7 @@
             "5:Portal": "", // Icon: terminal
             "8:Music": "", // Icon: music
             "9:Video": "", // Icon: film
+            "10:Torrent": "", // Icon: download
             "urgent": "",
             "focused": "",
             "default": ""

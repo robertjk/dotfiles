@@ -72,7 +72,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace $workspace_music
 bindsym $mod+9 workspace $workspace_video
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace $workspace_torrent
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace_www
@@ -84,7 +84,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace $workspace_music
 bindsym $mod+Shift+9 move container to workspace $workspace_video
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace $workspace_torrent
 
 
 ### Layout stuff
