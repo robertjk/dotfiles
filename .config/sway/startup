@@ -11,10 +11,20 @@
 #   sleep 0.3s && swaymsg "exec <command>"
 
 
+### Define some constants
+
+# Paths
+set $portal_ui_path ~/programming/credijusto/portal-ui
+
+# Commands
+set $neovim $term --title Neovim --command nvim
+set $term_portal_ui $term --title "Portal UI" --working-directory $portal_ui_path
+set $term_portal_ui_server $term --title "Portal UI (Server)" --working-directory $portal_ui_path --command "npm" "start"
+
+
 ### Run applications
 
 exec firefox-developer-edition
-exec chromium
 
 exec thunderbird
 

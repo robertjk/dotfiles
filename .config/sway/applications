@@ -5,17 +5,6 @@
 ################################################################################
 
 
-### Define some constants
-
-# Paths
-set $portal_ui_path ~/programming/credijusto/portal-ui
-
-# Commands
-set $neovim $term --title Neovim --command nvim
-set $term_portal_ui $term --title "Portal UI" --working-directory $portal_ui_path
-set $term_portal_ui_server $term --title "Portal UI (Server)" --working-directory $portal_ui_path --command "npm" "start"
-
-
 ### Assign applications to workspaces
 
 assign [window_role="^browser$"] → workspace $workspace_www

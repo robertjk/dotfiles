@@ -8,8 +8,10 @@
 
 
 set $laptop_internal eDP-1
-set $external_left HDMI-A-1
-set $external_right DP-2
+set $external_left_A DP-2
+set $external_left_B DP-1
+set $external_right HDMI-A-1
+set $external_tv HDMI-A-1
 
 # Output settings
 #
@@ -20,16 +22,14 @@ set $external_right DP-2
 # -823 is the value to align external Dell monitors on real height of the laptop
 # screen
 output $laptop_internal pos 0 0    res 1920x1080
-output $external_left   pos 1920 0 res 1920x1080
+output $external_left_A pos 1920 0 res 1920x1080
+output $external_left_B pos 1920 0 res 1920x1080
 output $external_right  pos 3840 0 res 1920x1080
 
 # Assign workspaces to outputs
-workspace $workspace_www           output $external_left
-workspace $workspace_programming   output $external_right
-workspace $workspace_mail          output $laptop_internal
-
-# Set wallpaper
-# Random
-output * bg `lswallpaper | grep "/selected/" | sort -R | head -1` fill
-# Choose specific one
-# output * bg /usr/share/backgrounds/other/endless.jpg fill
+workspace $workspace_www       output $external_left_A $external_left_B
+workspace $workspace_editor    output $external_right
+workspace $workspace_terminals output $external_right
+workspace $workspace_portal    output $external_right
+workspace $workspace_mail      output $laptop_internal
+workspace $workspace_video     output $external_tv
