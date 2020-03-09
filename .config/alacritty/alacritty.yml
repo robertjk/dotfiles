@@ -28,34 +28,46 @@ font:
   size: 10 # Points
 
 colors:
-  # Jellybeans theme
+  # List of themes: https://github.com/alacritty/alacritty/wiki/Color-schemes
+
+  # Current theme: Jellybeans
 
   # Default colors
   primary:
-    background: '0x121212'
-    foreground: '0xdedede'
+    background: '#161616'
+    foreground: '#e4e4e4'
+
+  # Cursor volors
+  cursor:
+    text: '#feffff'
+    cursor: '#ffb472'
 
   # Normal colors
   normal:
-    black:   '0x929292'
-    red:     '0xe27373'
-    green:   '0x94b979'
-    yellow:  '0xffba7b'
-    blue:    '0x97bedc'
-    magenta: '0xe1c0fa'
-    cyan:    '0x00988e'
-    white:   '0xdedede'
+    black:   '#a3a3a3'
+    red:     '#e98885'
+    green:   '#a3c38b'
+    yellow:  '#ffc68d'
+    blue:    '#a6cae2'
+    magenta: '#e7cdfb'
+    cyan:    '#00a69f'
+    white:   '#e4e4e4'
 
   # Bright colors
   bright:
-    black:   '0xbdbdbd'
-    red:     '0xffa1a1'
-    green:   '0xbddeab'
-    yellow:  '0xffdca0'
-    blue:    '0xb1d8f6'
-    magenta: '0xfbdaff'
-    cyan:    '0x1ab2a8'
-    white:   '0xffffff'
+    black:   '#c8c8c8'
+    red:     '#ffb2b0'
+    green:   '#c8e2b9'
+    yellow:  '#ffe1af'
+    blue:    '#bddff7'
+    magenta: '#fce2ff'
+    cyan:    '#0bbdb6'
+    white:   '#feffff'
+
+  # Selection colors
+  selection:
+    text: '#5963a2'
+    background: '#f6f6f6'
 
 dynamic_title: true
 
