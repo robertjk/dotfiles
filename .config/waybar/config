@@ -33,7 +33,8 @@
         "custom/keyboard-layout",
         "battery",
         "tray",
-        "clock"
+        "clock#date",
+        "clock#time"
     ],
 
 
@@ -61,11 +62,16 @@
         "tooltip": true
     },
 
-    "clock": {
+    "clock#time": {
         "interval": 1,
         "format": "{:%H:%M:%S}",
-        "tooltip": true,
-        "tooltip-format": "{:%e %b %Y}"
+        "tooltip": false
+    },
+
+    "clock#date": {
+      "interval": 10,
+      "format": "  {:%e %b %Y}", // Icon: calendar-alt
+      "tooltip-format": "{:%e %B %Y}"
     },
 
     "cpu": {
