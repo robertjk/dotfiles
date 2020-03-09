@@ -125,13 +125,13 @@
         "disable-scroll": true,
         "format": "{icon} {name}",
         "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:portal": "", // Icon: terminal
-            "8:music": "", // Icon: music
-            "9:video": "", // Icon: film
+            "1:WWW": "龜", // Icon: firefox-browser
+            "2:Mail": "", // Icon: mail
+            "3:Editor": "", // Icon: code
+            "4:Terminals": "", // Icon: terminal
+            "5:Portal": "", // Icon: terminal
+            "8:Music": "", // Icon: music
+            "9:Video": "", // Icon: film
             "urgent": "",
             "focused": "",
             "default": ""
