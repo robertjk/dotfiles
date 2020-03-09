@@ -48,7 +48,7 @@
 
 /* The whole bar */
 #waybar {
-    background: #323232;
+    background-color: #323232;
     color: white;
     font-family: Cantarell, Noto Sans, sans-serif;
     font-size: 13px;
@@ -131,7 +131,7 @@
 }
 
 #mode {
-    background: #64727D;
+    background-color: #64727D;
     border-top: 2px solid white;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
@@ -180,6 +180,12 @@
     padding-left: 12px;
     padding-right: 12px;
     color: #888888;
+}
+
+#workspaces button:hover {
+  background: #323232;
+  box-shadow: inherit;
+  text-shadow: inherit;
 }
 
 #workspaces button.focused {
