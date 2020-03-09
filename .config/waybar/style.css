@@ -133,6 +133,8 @@
 #mode {
     background: #64727D;
     border-top: 2px solid white;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
 }
 
 #network {
@@ -172,19 +174,21 @@
 }
 
 #workspaces button {
+    border-top: 2px solid transparent;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
     color: #888888;
-    border-top: 2px solid transparent;
 }
 
 #workspaces button.focused {
+    border-color: #4c7899;
     color: white;
     background-color: #285577;
-    border-top: 2px solid #4c7899;
 }
 
 #workspaces button.urgent {
+    border-color: #c9545d;
     color: #c9545d;
-    border-top: 2px solid #c9545d;
 }
