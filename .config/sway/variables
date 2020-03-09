@@ -32,3 +32,5 @@ set $workspace_mail 2:mail
 set $workspace_editor 3:editor
 set $workspace_terminals 4:terminals
 set $workspace_portal 5:portal
+set $workspace_music 8:music
+set $workspace_video 9:video

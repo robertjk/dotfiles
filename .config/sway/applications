@@ -22,6 +22,8 @@ assign [window_role="^browser$"] → workspace $workspace_www
 assign [class="Thunderbird"]     → workspace $workspace_mail
 assign [title="^Neovim$"]        → workspace $workspace_editor
 assign [title="^Portal UI"]      → workspace $workspace_portal
+assign [app_id="deadbeef"]       → workspace $workspace_music
+assign [class="vlc"]             → workspace $workspace_video
 
 
 ### Change window settings

@@ -130,6 +130,8 @@
             "3:editor": "", // Icon: code
             "4:terminals": "", // Icon: terminal
             "5:portal": "", // Icon: terminal
+            "8:music": "", // Icon: music
+            "9:video": "", // Icon: film
             "urgent": "",
             "focused": "",
             "default": ""
