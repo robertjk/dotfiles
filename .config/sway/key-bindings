@@ -164,3 +164,6 @@ bindsym --locked XF86AudioMute exec amixer set Master toggle
 bindsym --locked XF86AudioRaiseVolume exec amixer set Master 2dB+ unmute
 bindsym --locked XF86AudioLowerVolume exec amixer set Master 2dB- unmute
 bindsym --locked XF86AudioMicMute exec amixer set Capture toggle
+
+# Send signal 1 to waybar when changing keyboard layout
+bindsym $key-alt+space exec "pkill --signal SIGRTMIN+1 waybar"

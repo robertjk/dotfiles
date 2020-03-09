@@ -20,7 +20,7 @@
 # Any keyboard
 input type:keyboard {
     xkb_layout pl
-    xkb_options grp:win_space_toggle,compose:caps
+    xkb_options grp:alt_space_toggle,compose:caps
 }
 
 # Any mouse

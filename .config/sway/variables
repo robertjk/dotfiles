@@ -5,8 +5,9 @@
 ################################################################################
 
 
-# Modifier key. Mod4 - Logo (Windows) key; Mod1 - Alt.
-set $mod Mod4
+set $key-alt Mod1
+set $key-super Mod4
+set $mod $key-super
 
 # Home row direction keys, like vim
 set $left h
