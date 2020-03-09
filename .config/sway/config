@@ -14,7 +14,7 @@ include ./input
 include ./key-bindings
 include ./bar
 include ./applications
-include ./other
+include ./appearance
 include ./startup
 
 include /etc/sway/config.d/*
