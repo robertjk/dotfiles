@@ -30,6 +30,7 @@
         "memory",
         "cpu",
         "temperature",
+        "pulseaudio",
         "custom/keyboard-layout",
         "battery",
         "tray",
@@ -110,6 +111,23 @@
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon}  {volume}%",
+        "format-muted": "  Muted", // Icon: volume-mute
+        "format-icons": {
+            "headphones": "", // Icon: headphones
+            "handsfree": "", // Icon: headset
+            "headset": "", // Icon: headset
+            "phone": "", // Icon: phone
+            "portable": "", // Icon: phone
+            "car": "", // Icon: car
+            "default": ["", ""] // Icons: volume-down, volume-up
+        },
+        "on-click": "pulsemixer --toggle-mute",
+        "tooltip": true
+    },
+
     "sway/mode": {
         "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
         "tooltip": false
@@ -138,23 +156,6 @@
             "default": ""
         }
     },
-
-    //"pulseaudio": {
-    //    //"scroll-step": 1,
-    //    "format": "{icon}  {volume}%",
-    //    "format-bluetooth": "{icon}  {volume}%",
-    //    "format-muted": "",
-    //    "format-icons": {
-    //        "headphones": "",
-    //        "handsfree": "",
-    //        "headset": "",
-    //        "phone": "",
-    //        "portable": "",
-    //        "car": "",
-    //        "default": ["", ""]
-    //    },
-    //    "on-click": "pavucontrol"
-    //},
 
     "temperature": {
       "critical-threshold": 80,
