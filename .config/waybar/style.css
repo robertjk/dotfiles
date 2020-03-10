@@ -170,6 +170,8 @@
 }
 
 #window {
+    margin-left: 32px;
+    margin-right: 32px;
     font-weight: bold;
 }
 
