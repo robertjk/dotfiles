@@ -124,7 +124,7 @@
             "car": "", // Icon: car
             "default": ["", ""] // Icons: volume-down, volume-up
         },
-        "on-click": "pulsemixer --toggle-mute",
+        "on-click": "alacritty --title='Sound Mixer' --command='pulsemixer'",
         "tooltip": true
     },
 

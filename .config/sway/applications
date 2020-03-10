@@ -19,3 +19,4 @@ assign [class="qBittorrent"]     → workspace $workspace_torrent
 ### Change window settings
 
 for_window [window_role="browser"] layout tabbed
+for_window [title="Sound Mixer"] floating enable
