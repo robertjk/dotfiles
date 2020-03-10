@@ -8,4 +8,4 @@ output * bg `lswallpaper | grep "/selected/" | sort -R | head -1` fill
 # output * bg /usr/share/backgrounds/other/endless.jpg fill
 
 # Gaps
-gaps inner 5
+gaps inner 6
