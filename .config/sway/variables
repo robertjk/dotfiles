@@ -32,6 +32,6 @@ set $workspace_mail 2:Mail
 set $workspace_editor 3:Editor
 set $workspace_terminals 4:Terminals
 set $workspace_portal 5:Portal
-set $workspace_music 8:Music
-set $workspace_video 9:Video
+set $workspace_documents 8:Documents
+set $workspace_multimedia 9:Multimedia
 set $workspace_torrent 10:Torrent

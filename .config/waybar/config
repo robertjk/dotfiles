@@ -148,9 +148,9 @@
             "3:Editor": "", // Icon: code
             "4:Terminals": "", // Icon: terminal
             "5:Portal": "", // Icon: terminal
-            "8:Music": "", // Icon: music
-            "9:Video": "", // Icon: film
-            "10:Torrent": "", // Icon: download
+            "8:Documents": "", // Icon: book
+            "9:Multimedia": "", // Icon: play-circle
+            "10:Torrent": "", // Icon: cloud-download-alt
             "urgent": "",
             "focused": "",
             "default": ""
