@@ -132,9 +132,9 @@
 
 #mode {
     background-color: #64727D;
-    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+    padding-top: 2px;
 }
 
 #network {
@@ -176,9 +176,9 @@
 }
 
 #workspaces button {
-    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
     /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+    padding-top: 2px;
     padding-left: 12px;
     padding-right: 12px;
     color: #888888;
