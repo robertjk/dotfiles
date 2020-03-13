@@ -160,10 +160,10 @@ bindsym $mod+Shift+o exec $lock
 # Function keyboard
 # TODO:
 # - XF86Display (turning off the display)
-bindsym --locked XF86AudioMute exec amixer set Master toggle
-bindsym --locked XF86AudioRaiseVolume exec amixer set Master 2dB+ unmute
-bindsym --locked XF86AudioLowerVolume exec amixer set Master 2dB- unmute
-bindsym --locked XF86AudioMicMute exec amixer set Capture toggle
+bindsym --locked XF86AudioMute exec pulsemixer --toggle-mute
+bindsym --locked XF86AudioRaiseVolume exec pulsemixer --change-volume +1
+bindsym --locked XF86AudioLowerVolume exec pulsemixer --change-volume -1
+bindsym --locked XF86AudioMicMute exec pulsemixer --toggle-mute --id source-1
 
 # Send signal 1 to waybar when changing keyboard layout
 bindsym $key-alt+space exec "pkill --signal SIGRTMIN+1 waybar"
