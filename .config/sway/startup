@@ -14,12 +14,12 @@
 ### Define some constants
 
 # Paths
-set $portal_ui_path ~/programming/credijusto/portal-ui
+set $portal_ui_term $term --working-directory ~/programming/credijusto/portal-ui
 
 # Commands
 set $neovim $term --title Neovim --command nvim
-set $term_portal_ui $term --title "Portal UI" --working-directory $portal_ui_path
-set $term_portal_ui_server $term --title "Portal UI (Server)" --working-directory $portal_ui_path --command "npm" "start"
+set $term_portal_ui $portal_ui_term --title "Portal UI"
+set $term_portal_ui_server $portal_ui_term --title "Portal UI (Server)"
 
 
 ### Run applications
@@ -37,7 +37,7 @@ exec $term_portal_ui
 # Display the non-server terminal to the left
 exec sleep 0.3s && $term_portal_ui_server
 # Focus the non-server terminal
-exec sleep 0.6s && swaymsg 'workspace $workspace_portal; [title="^Portal UI$"] focus'
+exec 0.6s && swaymsg 'workspace $workspace_portal; [title="^Portal UI$"] focus'
 
 ### Set focus
 
