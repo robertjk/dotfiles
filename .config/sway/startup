@@ -30,14 +30,13 @@ exec thunderbird
 
 exec $neovim
 
-exec swaymsg "workspace $workspace_terminals; exec $term"
-
-exec swaymsg "workspace $workspace_portal; layout splith"
-exec $term_portal_ui
+exec swaymsg 'workspace $workspace_terminals; exec $term'
+exec swaymsg 'workspace $workspace_terminals; layout stacking'
+exec sleep 0.3s && $term_portal_ui
 # Display the non-server terminal to the left
-exec sleep 0.3s && $term_portal_ui_server
+exec sleep 0.6s && swaymsg 'workspace $workspace_terminals; splith; exec $term_portal_ui_server'
 # Focus the non-server terminal
-exec 0.6s && swaymsg 'workspace $workspace_portal; [title="^Portal UI$"] focus'
+exec sleep 0.9s && swaymsg 'workspace $workspace_terminals; focus left; focus up'
 
 ### Set focus
 
