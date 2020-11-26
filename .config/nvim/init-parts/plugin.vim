@@ -95,14 +95,18 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \    'javascript': ['prettier'],
 \    'typescript': ['prettier'],
-\    'vue': ['prettier'],
+\    'css': ['prettier'],
 \    'scss': ['prettier'],
-\    'html': ['prettier']
+\    'vue': ['prettier'],
+\    'jsx': ['prettier'],
+\    'yaml': ['prettier'],
+\    'json': ['prettier'],
+\    'markdown': ['prettier']
 \}
 " Lint only when saving file
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
-" Apply auto fixing on save
+" Apply auto fixes when saving file
 let g:ale_fix_on_save = 1
 " Do not highlight area with error (only set sign marker)
 let g:ale_set_highlights = 0

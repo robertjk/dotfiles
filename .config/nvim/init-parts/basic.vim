@@ -39,6 +39,9 @@ if has('gui_running')
     set guifont=Hack\ 11
 endif
 
+" Set window title
+set title
+
 " Use TrueColor in terminal
 set termguicolors
 
