@@ -45,3 +45,9 @@ input "1149:4128:Kensington_Expert_Mouse" {
     pointer_accel 0.3
     scroll_factor 3.0
 }
+
+# Kensington Expert Wireless trackball
+input "1149:32793:Expert_Wireless_TB_Mouse" {
+    pointer_accel 0.25
+    scroll_factor 3.0
+}
