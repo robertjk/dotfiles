@@ -18,6 +18,9 @@
     ; Tool used by `git mergetool`
     tool = nvim-diff4
 
+[pull]
+    ff = only
+
 [diff]
     ; Tool used by `git difftool`
     tool = nvim-diff2
@@ -55,7 +58,7 @@
     diff-staged = diff --staged
     diffs = diff-staged
     branch-master = "!f() { git fetch; git checkout --no-track -b $1 origin/master; }; f"
-    branch-portal-ui-v2 = "!f() { git fetch; git checkout --no-track -b $1 origin/portal-ui-v2; }; f"
+    branch-develop = "!f() { git fetch; git checkout --no-track -b $1 origin/develop; }; f"
     branch-rename = "!f() { git push origin -d $(git branch --show-current); git branch -m $(git branch --show-current) $1; git push-new; }; f"
     push-new = push --set-upstream origin HEAD
     delete-merged-branches = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d

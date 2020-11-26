@@ -8,6 +8,7 @@ window:
     x: 4
     y: 4
   title: Terminal
+  dynamic_title: true
 
 scrolling:
   history: 50000
@@ -68,8 +69,6 @@ colors:
   selection:
     text: '#5963a2'
     background: '#f6f6f6'
-
-dynamic_title: true
 
 key_bindings:
   # Super+Shift+Return complements Sway's Super+Return

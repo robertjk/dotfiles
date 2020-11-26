@@ -1,0 +1,54 @@
+/* The whole rofi window */
+#window {
+  border: 2px solid #111111;
+  background-color: #323232;
+  font-family: Cantarell, Noto Sans, sans-serif;
+}
+
+/* Search bar */
+#input {
+  border: 1px solid #222222;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #555555;
+  font-size: 16px;
+}
+
+#input:focus {}
+
+/* Box that contains search bar and entries */
+#outer-box {
+  padding: 8px;
+}
+
+/* Scrolled window containing all the entries */
+#scroll {
+  margin: 8px 0px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Box containing all entries */
+#inner-box {}
+
+/* All entries */
+#entry {}
+
+/* Each entry */
+.entry {
+  padding: 2px 5px;
+  color: #ffffff;
+}
+
+/* Only selected entries */
+#entry:selected {
+  background-color: #4c7899;
+}
+
+/* App icon */
+.entry label {}
+
+/* Entry that is selected */
+#selected {
+  background-color: #285577;
+}

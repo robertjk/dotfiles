@@ -143,7 +143,7 @@
         "disable-scroll": true,
         "format": "{icon} {name}",
         "format-icons": {
-            "1:WWW": "龜", // Icon: firefox-browser
+            "1:WWW": "", // Icon: firefox-browser
             "2:Mail": "", // Icon: mail
             "3:Editor": "", // Icon: code
             "4:Terminals": "", // Icon: terminal
