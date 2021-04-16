@@ -2,12 +2,6 @@
 #
 # ~/.bashrc
 #
-# Dependencies:
-# - Git
-# - pacman (optional)
-# - Yay (optional)
-# - udiskie (optional)
-#
 ################################################################################
 
 
@@ -15,6 +9,6 @@
 [[ $- != *i* ]] && return
 
 # Source parts of bashrc
-source ~/.bash.d/shell_functionality
-source ~/.bash.d/shell_looks
 source ~/.bash.d/aliases
+source ~/.bash.d/functionality
+source ~/.bash.d/appearance

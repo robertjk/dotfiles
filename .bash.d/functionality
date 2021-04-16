@@ -1,0 +1,20 @@
+################################################################################
+#
+# Bash functionality
+#
+################################################################################
+
+# Set Neovim as default editor.
+export EDITOR=nvim
+
+# History settings
+export HISTFILESIZE=100000000
+export HISTSIZE=10000
+
+# Allow to use CTRL-s to search history forward like CTRL-r does backward
+stty -ixon
+
+# If command not found, find Arch packages which install it.
+if [ -r /usr/share/doc/pkgfile/command-not-found.bash ]; then
+    source /usr/share/doc/pkgfile/command-not-found.bash
+fi

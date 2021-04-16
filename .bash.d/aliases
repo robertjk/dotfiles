@@ -1,94 +1,105 @@
 ################################################################################
 #
-# ~/.bash_aliases
+# Bash aliases
 #
 # Dependencies:
-# - Git
 # - pacman (optional)
+# - expac (optional)
+# - pactree (optional)
+# - pacreport (optional)
 # - Yay (optional)
 # - udiskie (optional)
 #
 ################################################################################
 
-# Map vim command to NeoVim. Mostly to prevent Vim configuration from being
-# created (as they are in different location than NeoVim).
-alias vim=nvim
-
 # Utility to check if a shell command exists on this system
-alias command-exists='command -v >/dev/null 2>&1'
+alias command-exists="command -v >/dev/null 2>&1"
 
 # grep
-alias grep='grep --color=auto' # Add coloring to grep
-alias egrep='egrep --color=auto' # Add coloring to grep
-alias fgrep='fgrep --color=auto' # Add coloring to grep
+alias grep="grep --color=auto" # Add coloring to grep
+alias egrep="egrep --color=auto" # Add coloring to grep
+alias fgrep="fgrep --color=auto" # Add coloring to grep
 
 # ls
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    alias ls='ls --color=auto'
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    alias ls='ls -G'
-fi
-alias ll='ls -lFh'
-alias la='ls -lAFh'
-alias l1='ls -1F'
+alias ls="ls --color=auto"
+alias ll="ls -lFh"
+alias la="ls -lAFh"
+alias l1="ls -1F"
 
 # cp, mv, rm
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
 
 # diff
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    alias diff='diff --color=auto'
-fi
+alias diff="diff --color=auto"
 
 # ps
-alias pse='ps -e'
-alias psf='ps -f'
-alias psef='ps -ef'
+alias pse="ps -e"
+alias psf="ps -f"
+alias psef="ps -ef"
 
 # df
-alias dfsd='df -h | grep /dev/sd'
-alias dus='du -s -h'
+alias dfsd="df -h | grep /dev/sd"
+alias dus="du -s -h"
 
 # lsblk
-alias lsblk-details='lsblk --output=NAME,FSTYPE,FSVER,LABEL,PARTLABEL,MOUNTPOINT,FSAVAIL,FSUSE%'
+alias lsblk-details="lsblk --output=NAME,FSTYPE,FSVER,LABEL,PARTLABEL,MOUNTPOINT,FSAVAIL,FSUSE%"
 
 # free
-alias free='free -h'
+alias free="free -h"
 
 # Sudo. Required to be able to call aliased command with sudo.
 # http://www.shellperson.net/using-sudo-with-an-alias/
-alias sudo='sudo '
+alias sudo="sudo "
 
 # Tar
-alias tar-gz-extract='tar -xzvf'
-alias tar-gz-create='tar -czvf'
+alias tar-gz-extract="tar -xzvf"
+alias tar-gz-create="tar -czvf"
+
+# systemctl
+if command-exists "systemctl"; then
+    alias systemctl-failed="systemctl --failed"
+fi
+
+# journalctl
+if command-exists "journalctl"; then
+    alias journalctl-boot-errors="journalctl --priority err --catalog --boot"
+fi
+
+# find
+if command-exists "find"; then
+    alias find-broken-symlinks="find / -not -path '/proc*' -not -path '/run*' -xtype l -print"
+fi
 
 # Pacman
 if command-exists "pacman"; then
-    alias pacman='pacman --color auto'
-    alias pacman-arch-upgrade='pacman -Syu'
-    alias pacman-remove-orphans='pacman -Rns $(pacman -Qtdq)'
-    alias pacman-list-orphans='pacman -Qdt'
-    # List explicitly installed packages which weren't initially installed by Arch
-    # (don't belong to 'base' nor 'base-devel' gropus).
-    alias pacman-list-my-explicit="expac --timefmt='%Y-%m-%d %T' '%l\t%n' `pacman -Qei | awk '/^Name/ { name=\$3 } /^Groups/ { if ( \$3 != \"base\" && \$3 != \"base-devel\" ) { print name } }' | echo \$(cat)` | sort"
-    alias pacman-list-last-20="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
+    alias pacman-arch-upgrade="pacman --sync --refresh --sysupgrade"
+    alias pacman-orphans="pacman --query --unrequired --deps"
+    alias pacman-orphans-remove="pacman --remove --recursive $(pacman-orphans --quiet)"
+    alias pacman-explicit-by-date="expac --timefmt='%Y-%m-%d %T' '%l\t%n' `pacman --query --explicit | echo \$(cat)` | sort"
+    alias pacman-explicit-unrequired="pacman --query --explicit --unrequired"
+    alias pacman-explicit-possible-dependencies="comm -23 <(pacman --query --explicit) <(pacman --query --explicit --unrequired)"
+    alias pacman-last-20="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20"
+    alias pacman-backups-modified="pacman --query --info --info | awk '/^MODIFIED/ {print \$2}'"
 fi
 
 # Yay
 if command-exists "yay"; then
-    alias yay-arch-upgrade='yay -Syu'
-    alias yay='yay --color auto'
+    alias yay-arch-upgrade="yay --sync --refresh --sysupgrade"
+fi
+
+# pactree
+if command-exists "pactree"; then
+    alias pactree="pactree --color"
+fi
+
+# pacreport
+if command-exists "pacreport"; then
+    alias pacreport="pacreport --unowned-files"
 fi
 
 # udiskie
 if command-exists "udiskie-umount"; then
     alias udiskie-detach="udiskie-umount --detach"
 fi
-
-# Credijusto VPN
-alias vpn-credijusto-connect="sudo systemctl start openvpn-client@credijusto.service"
-alias vpn-credijusto-disconnect="sudo systemctl stop openvpn-client@credijusto.service"
-alias vpn-credijusto-status="sudo systemctl status openvpn-client@credijusto.service"
