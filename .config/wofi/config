@@ -1,0 +1,3 @@
+mode=drun
+prompt=Enter the application name...
+insensitive=true

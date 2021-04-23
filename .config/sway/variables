@@ -2,29 +2,28 @@
 #
 # Variables
 #
+# Shared variables. Strictly local variables are defined in other files near
+# their usage.
+#
 ################################################################################
 
 
-set $key-alt Mod1
-set $key-super Mod4
-set $mod $key-super
+# Outputs
+set $output_laptop eDP-1
+set $output_monitor "Dell Inc. DELL U2412M Y1H5T1B831CL"
+set $output_tv "Goldstar Company Ltd 42PC3RA-ZJ 0x00000101"
 
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+# Screen locking application
+set $lock swaylock
 
 # Preferred terminal emulator
 set $term alacritty
 
 # Preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu wofi --show=drun | swaymsg exec --
-
-# Preferred screen locker
-set $lock swaylock --daemonize
+#
+# NOTE: pass the final command to swaymsg so that the resulting window can be
+# opened on the original workspace that the command was run on.
+set $menu wofi | swaymsg exec --
 
 # Workspaces
 set $workspace_www 1:WWW

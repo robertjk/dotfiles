@@ -2,6 +2,10 @@
 #
 # Input configuration
 #
+# You can get the names of your inputs by running: swaymsg -t get_inputs.
+#
+# Read `man 5 sway-input` for more information about this section.
+#
 ################################################################################
 
 
@@ -14,18 +18,12 @@
 #       middle_emulation enabled
 #   }
 #
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 # Any keyboard
 input type:keyboard {
-    xkb_layout pl
-    xkb_options grp:alt_space_toggle,compose:caps
-}
-
-# Any mouse
-input type:pointer {
-    natural_scroll enabled
+    xkb_layout pl,us
+    xkb_variant ,intl
+    xkb_options compose:caps
 }
 
 # Any touchpad
@@ -33,21 +31,19 @@ input type:touchpad {
     natural_scroll enabled
 }
 
-# ThinkPad touchpad
-input "1267:40:Elan_Touchpad" {
+# ThinkPad P1 touchpad
+input "2:7:SynPS/2_Synaptics_TouchPad" {
     dwt enabled
-    pointer_accel 0.3
-    scroll_factor 1.3
+    pointer_accel 0.60
+}
+
+# ThinkPad P1 trackpoint
+input "2:10:TPPS/2_Elan_TrackPoint" {
+    pointer_accel -0.40
 }
 
 # Kensington Expert trackball
 input "1149:4128:Kensington_Expert_Mouse" {
-    pointer_accel 0.3
-    scroll_factor 3.0
-}
-
-# Kensington Expert Wireless trackball
-input "1149:32793:Expert_Wireless_TB_Mouse" {
-    pointer_accel 0.25
-    scroll_factor 3.0
+    pointer_accel -0.10
+    scroll_factor 1.40
 }

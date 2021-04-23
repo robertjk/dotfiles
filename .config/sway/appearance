@@ -1,11 +1,15 @@
-# Set font
-font pango:Cantarell 14px
+################################################################################
+#
+# Appearance
+#
+################################################################################
 
-# Set wallpaper
-# Random
-output * bg `lswallpaper | grep "/selected/" | sort -R | head -1` fill
-# Choose specific one
-# output * bg /usr/share/backgrounds/other/endless.jpg fill
+
+# Set font (default was monospace)
+font pango:system-ui 14px
+
+# Set wallpaper randomly from a selection
+output * bg `ls -1 ./wallpapers/* | sort -R | head -1` fill
 
 # Gaps
-gaps inner 6
+gaps inner 8

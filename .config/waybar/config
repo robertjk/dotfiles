@@ -11,12 +11,12 @@
     // Global configuration
     // -------------------------------------------------------------------------
 
-    "layer": "top",
+    "layer": "bottom",
 
     "position": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    "height": 32,
 
     "modules-left": [
         "sway/workspaces",
@@ -27,11 +27,12 @@
     ],
     "modules-right": [
         "network",
-        "memory",
-        "cpu",
-        "temperature",
-        "pulseaudio",
+        // "memory",
+        // "cpu",
+        // "temperature",
         "custom/keyboard-layout",
+        "backlight",
+        "pulseaudio",
         "battery",
         "tray",
         "clock#date",
@@ -43,22 +44,29 @@
     // Modules
     // -------------------------------------------------------------------------
 
+    "backlight": {
+        "format": " {percent}%",
+        "interval": 2,
+        "on-scroll-up": "brightnessctl set +2%",
+        "on-scroll-down": "brightnessctl set 2%-"
+    },
+
     "battery": {
         "interval": 10,
         "states": {
-            "warning": 30,
+            "warning": 25,
             "critical": 15
         },
         // Connected to AC
-        "format": "  {icon}  {capacity}%", // Icon: bolt
+        "format": " {icon} {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
         "format-icons": [
-            "", // Icon: battery-full
-            "", // Icon: battery-three-quarters
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
             "", // Icon: battery-half
-            "", // Icon: battery-quarter
-            ""  // Icon: battery-empty
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
         ],
         "tooltip": true
     },
@@ -71,32 +79,37 @@
 
     "clock#date": {
       "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
+      "format": " {:%e %b %Y}", // Icon: calendar-alt
+      "tooltip-format": "{:%e %B %Y}",
+      "locale": "en_US.UTF-8",
+      "timezone": "Europe/Warsaw",
     },
 
     "cpu": {
-        "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "interval": 3,
+        "format": " {usage}% ({load})", // Icon: microchip
         "states": {
           "warning": 70,
           "critical": 90
-        }
+        },
     },
 
     "custom/keyboard-layout": {
-      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4 | cut -d ' ' -f1",
       // Interval set only as a fallback, as the value is updated by signal
-      "interval": 30,
-      "format": "  {}", // Icon: keyboard
+      "interval": 10,
+      "format": " {}", // Icon: keyboard
       // Signal sent by Sway key binding (~/.config/sway/key-bindings)
       "signal": 1, // SIGHUP
-      "tooltip": false
+      "tooltip": false,
+      "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+      "on-scroll-up": "swaymsg input type:keyboard xkb_switch_layout next",
+      "on-scroll-down": "swaymsg input type:keyboard xkb_switch_layout prev",
     },
 
     "memory": {
-        "interval": 5,
-        "format": "  {}%", // Icon: memory
+        "interval": 3,
+        "format": " {}%", // Icon: memory
         "states": {
             "warning": 70,
             "critical": 90
@@ -104,17 +117,17 @@
     },
 
     "network": {
-        "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "interval": 3,
+        "format-wifi": " {essid}", // Icon: wifi
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "tooltip-format": "{ifname}: {ipaddr} (signal: {signalStrength}%)"
     },
 
     "pulseaudio": {
-        "scroll-step": 1,
-        "format": "{icon}  {volume}%",
-        "format-muted": "  Muted", // Icon: volume-mute
+        "scroll-step": 2,
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted", // Icon: volume-mute
         "format-icons": {
             "headphones": "", // Icon: headphones
             "handsfree": "", // Icon: headset
@@ -129,7 +142,7 @@
     },
 
     "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "format": "<span style=\"italic\"> {}</span>", // Icon: expand-arrows-alt
         "tooltip": false
     },
 
@@ -143,13 +156,13 @@
         "disable-scroll": true,
         "format": "{icon} {name}",
         "format-icons": {
-            "1:WWW": "", // Icon: firefox-browser
-            "2:Mail": "", // Icon: mail
-            "3:Editor": "", // Icon: code
-            "4:Terminals": "", // Icon: terminal
-            "8:Documents": "", // Icon: book
-            "9:Multimedia": "", // Icon: play-circle
-            "10:Torrent": "", // Icon: cloud-download-alt
+            "1:WWW":"", // Icon: firefox-browser
+            "2:Mail":"", // Icon: mail
+            "3:Editor":"", // Icon: code
+            "4:Terminals":"", // Icon: terminal
+            "8:Documents":"", // Icon: book
+            "9:Multimedia":"", // Icon: music
+            "10:Torrent":"", // Icon: cloud-download-alt
             "urgent": "",
             "focused": "",
             "default": ""
@@ -157,9 +170,9 @@
     },
 
     "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon}  {temperatureC}°C",
+      "critical-threshold": 75,
+      "interval": 3,
+      "format": "{icon} {temperatureC}°C",
       "format-icons": [
           "", // Icon: temperature-empty
           "", // Icon: temperature-quarter

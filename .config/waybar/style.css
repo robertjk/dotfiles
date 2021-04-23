@@ -48,13 +48,18 @@
 
 /* The whole bar */
 #waybar {
-    background-color: #323232;
-    color: white;
-    font-family: Cantarell, Noto Sans, sans-serif;
-    font-size: 12px;
+    background-color: #222222; /* Sway palette: unfocused/background */
+    color: #ffffff; /* Sway palette: focused/text */
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
 }
 
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
 /* Each module */
+#backlight,
 #battery,
 #clock,
 #cpu,
@@ -65,14 +70,12 @@
 #pulseaudio,
 #temperature,
 #tray {
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: 18px;
 }
 
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
+#backlight {
+    /* No styles */
+}
 
 #battery {
     animation-timing-function: linear;
@@ -99,7 +102,13 @@
 }
 
 #clock {
-    font-weight: bold;
+    /* No styles */
+}
+
+#clock.time {
+    margin-left: 12px;
+    margin-right: 12px;
+    min-width: 60px;
 }
 
 #cpu {
@@ -112,6 +121,10 @@
 
 #cpu.critical {
     color: red;
+}
+
+#custom-keyboard-layout {
+    margin-left: 22px;
 }
 
 #memory {
@@ -131,10 +144,11 @@
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 2px solid white;
+    color: #ffffff; /* Sway palette: urgent/text */
+    background-color: #900000; /* Sway palette: urgent/background */
+    margin-left: 0;
     /* To compensate for the top border and still have vertical centering */
-    padding-top: 2px;
+    padding: 0 16px;
 }
 
 #network {
@@ -153,10 +167,6 @@
     /* No styles */
 }
 
-#custom-spotify {
-    color: rgb(102, 220, 105);
-}
-
 #temperature {
     /* No styles */
 }
@@ -172,31 +182,38 @@
 #window {
     margin-left: 32px;
     margin-right: 32px;
-    font-weight: bold;
 }
 
 #workspaces button {
-    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
     /* To compensate for the top border and still have vertical centering */
-    padding-top: 2px;
-    padding-left: 12px;
-    padding-right: 12px;
-    color: #888888;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 18px;
+    color: #888888; /* Sway palette: unfocused/text */
 }
 
 #workspaces button:hover {
-  background: #323232;
-  box-shadow: inherit;
-  text-shadow: inherit;
+    /* Reset all hover styles */
+    background: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.visible {
+    border-color: #333333; /* Sway palette focused_inactive/border */
+    color: #ffffff; /* Sway palette: focused_inactive/text */
+    background-color: #5f676a; /* Sway palette focused_inactive/background */
 }
 
 #workspaces button.focused {
-    border-color: #4c7899;
-    color: white;
-    background-color: #285577;
+    border-color: #4c7899; /* Sway palette: focused/border */
+    color: #ffffff; /* Sway palette: focused/text */
+    background-color: #285577; /* Sway palette: focused/background */
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    border-color: #2f343a; /* Sway palette: urgent/border */
+    color: #ffffff; /* Sway palette: urgent/text */
+    background-color: #900000; /* Sway palette: urgent/background */
 }

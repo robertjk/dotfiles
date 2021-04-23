@@ -1,6 +1,6 @@
 ################################################################################
 #
-# What to run after startup
+# What to run on Sway startup
 #
 ################################################################################
 
@@ -13,15 +13,7 @@
 
 ### Define some constants
 
-set $neovim $term --command nvim
-
-set $term_minerals_base $term --working-directory ~/programming/credijusto/minerals
-set $term_minerals_main $term_minerals_base --title "Minerals" --class "Minerals"
-set $term_minerals_server $term_minerals_base --title "Minerals (Server)" --class "Minerals (Server)"
-
-set $term_website_base $term --working-directory ~/programming/credijusto/landing-website-ui
-set $term_website_main $term_website_base --title "Landing Website UI" --class "Landing Website UI"
-set $term_website_server $term_website_base --title "Landing Website UI (Server)" --class "Landing Website UI (Server)"
+set $neovim $term --title "Neovim" --command nvim
 
 
 ### Run applications
@@ -29,22 +21,11 @@ set $term_website_server $term_website_base --title "Landing Website UI (Server)
 exec firefox-developer-edition
 exec thunderbird
 exec $neovim
-
-exec swaymsg 'workspace $workspace_terminals; exec $term'
-exec swaymsg 'workspace $workspace_terminals; layout stacking'
-
-# Focus the non-server terminal and start UI Components terminal
-exec sleep 0.4s && swaymsg 'workspace $workspace_terminals; exec $term_minerals_main'
-# Start UI Components server terminal
-exec sleep 0.8s && swaymsg 'workspace $workspace_terminals; splith; exec $term_minerals_server'
-# Focus the non-server terminal and start the website terminal
-exec sleep 1.2s && swaymsg 'workspace $workspace_terminals; focus left; focus parent; exec $term_website_main'
-# Start Landing Website server terminal
-exec sleep 1.6s && swaymsg 'workspace $workspace_terminals; splith; exec $term_website_server'
-# Focus the non-server terminal and then the main terminal
-exec sleep 2.0s && swaymsg 'workspace $workspace_terminals; focus left; focus down'
+exec --no-startup-id swaymsg "workspace $workspace_terminals; exec $term"
+exec udiskie
+exec safeeyes
 
 
 ### Set focus
 
-exec sleep 3s && swaymsg 'workspace $workspace_www; [title="Firefox"] focus'
+focus output $output_monitor

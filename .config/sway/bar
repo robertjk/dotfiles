@@ -8,6 +8,7 @@
 
 
 bar {
-    # Run waybar instead of swaybar
+    # Run waybar instead of swaybar.
+    # It's config is in ~/.config/waybar/.
     swaybar_command waybar
 }
