@@ -12,12 +12,13 @@
 # Source ~/.bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# Start Keychain to cache SSH keys.
-if command-exists "keychain"; then
-    eval $(keychain --eval --agents ssh --quiet --noask id_ed25519)
-fi
+# Initialize SSH agent environment
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
-# Start udiskie daemon to automount USB media.
-if command-exists "udiskie"; then
-    udiskie --automount --tray --notify &
+# Needed by pipewire-media-session
+export XDG_CURRENT_DESKTOP=sway
+
+# Start sway if running first virtual terminal
+if [ "$(tty)" = "/dev/tty1" ]; then
+	exec sway
 fi
