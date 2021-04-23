@@ -6,6 +6,14 @@
 
 
 " ------------------------------------------------------------------------------
+" Polyglot
+" ------------------------------------------------------------------------------
+
+" List of plugins in the pack to not use
+let g:polyglot_disabled = []
+
+
+" ------------------------------------------------------------------------------
 " Plug (plugin manager) configuration, listing all the plugins.
 " ------------------------------------------------------------------------------
 
@@ -147,11 +155,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 " Extensions to use
 let g:ctrlp_extensions = []
 " PyMatcher function for CtrlP
-if !has('python')
-    echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-    let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Directories to ignore
 set wildignore+=*/node_modules/*,*/.git/*
 " Custom mappings
@@ -178,14 +182,6 @@ command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args
 
 let g:matchup_surround_enabled = 1
 let g:matchup_transmute_enabled = 1
-
-
-" ------------------------------------------------------------------------------
-" Polyglot
-" ------------------------------------------------------------------------------
-
-" List of plugins in the pack to not use
-let g:polyglot_disabled = []
 
 
 " ------------------------------------------------------------------------------
