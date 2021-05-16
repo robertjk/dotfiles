@@ -18,3 +18,14 @@ stty -ixon
 if [ -r /usr/share/doc/pkgfile/command-not-found.bash ]; then
     source /usr/share/doc/pkgfile/command-not-found.bash
 fi
+
+# Integrate fzf key bindings and completion
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
+export FZF_CTRL_T_COMMAND="fd --type f --hidden --follow"
+# Color scheme "JellyX" from: https://github.com/junegunn/fzf/wiki/Color-schemes
+export FZF_DEFAULT_OPTS="
+    --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
+    --color info:150,prompt:110,spinner:150,pointer:167,marker:174
+"
