@@ -14,13 +14,11 @@ scrolling:
   history: 100000
 
 font:
-  size: 11
+  size: 12
 
+# List of themes: https://github.com/alacritty/alacritty/wiki/Color-schemes
+# Current theme: Jellybeans
 colors:
-  # List of themes: https://github.com/alacritty/alacritty/wiki/Color-schemes
-
-  # Current theme: Jellybeans
-
   # Default colors
   primary:
     background: '#161616'
