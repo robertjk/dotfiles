@@ -125,25 +125,27 @@ let g:jellybeans_overrides = {
 let g:ctrlp_cmd = 'CtrlPLastMode'
 " Set maximum number of results
 let g:ctrlp_match_window = 'results:1000'
-" How to handle situation when opening a file already opened in another window
+" When to switch to another window if the result being opened is already opened
+" somewhere
 let g:ctrlp_switch_buffer = 'et'
 " ctrlp will work in current directory by default
 let g:ctrlp_working_path_mode = 'd'
+" Persist cache between sessions
+let g:ctrlp_clear_cache_on_exit = 0
 " Include hidden files and directories
 let g:ctrlp_show_hidden = 1
 " Set maximum number of files to scan to unlimited
 let g:ctrlp_max_files = 0
-" Persist cache between sessions
-let g:ctrlp_clear_cache_on_exit = 0
-" Extensions to use
-let g:ctrlp_extensions = []
+" Follow symlinks but avoid loops
+let g:ctrlp_follow_symlinks = 1
 " PyMatcher function for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" Extensions to use
+let g:ctrlp_extensions = []
 " Directories to ignore
 set wildignore+=*/node_modules/*,*/.git/*
 " Custom mappings
-nnoremap <Leader><C-p>d :CtrlP ~/Documents<CR>
-nnoremap <Leader><C-p>v :CtrlP ~/.config/nvim<CR>
+nnoremap <Leader><C-p>c :CtrlP ~/.config<CR>
 
 
 " ------------------------------------------------------------------------------
