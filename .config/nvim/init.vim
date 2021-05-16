@@ -8,10 +8,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" Set Neovim files locations in variables
-let $MYVIMCONFIG = '~/.config/nvim/'
-let $MYVIMCACHE = '~/.local/share/nvim/'
-
 " First set basic settings.
 source ~/.config/nvim/init-parts/basic.vim
 

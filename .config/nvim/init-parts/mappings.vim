@@ -22,6 +22,7 @@ map! <BS> <Nop>
 
 " Map editing commonly accessed files to <Leader><file-key>
 " Vim
+let $MYVIMCONFIG = stdpath('config')
 nnoremap <Leader>evv  :edit    $MYVIMRC<CR>
 nnoremap <Leader>svv  :vsplit  $MYVIMRC<CR>
 nnoremap <Leader>tvv  :tabedit $MYVIMRC<CR>
@@ -31,9 +32,9 @@ nnoremap <Leader>tvb  :tabedit $MYVIMCONFIG/init-parts/basic.vim<CR>
 nnoremap <Leader>evm  :edit    $MYVIMCONFIG/init-parts/mappings.vim<CR>
 nnoremap <Leader>svm  :vsplit  $MYVIMCONFIG/init-parts/mappings.vim<CR>
 nnoremap <Leader>tvm  :tabedit $MYVIMCONFIG/init-parts/mappings.vim<CR>
-nnoremap <Leader>evp  :edit    $MYVIMCONFIG/init-parts/plugin.vim<CR>
-nnoremap <Leader>svp  :vsplit  $MYVIMCONFIG/init-parts/plugin.vim<CR>
-nnoremap <Leader>tvp  :tabedit $MYVIMCONFIG/init-parts/plugin.vim<CR>
+nnoremap <Leader>evp  :edit    $MYVIMCONFIG/init-parts/plugins.vim<CR>
+nnoremap <Leader>svp  :vsplit  $MYVIMCONFIG/init-parts/plugins.vim<CR>
+nnoremap <Leader>tvp  :tabedit $MYVIMCONFIG/init-parts/plugins.vim<CR>
 nnoremap <Leader>evl  :edit    $MYVIMCONFIG/to-learn.md<CR>
 nnoremap <Leader>svl  :vsplit  $MYVIMCONFIG/to-learn.md<CR>
 nnoremap <Leader>tvl  :tabedit $MYVIMCONFIG/to-learn.md<CR>
