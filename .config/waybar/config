@@ -27,6 +27,7 @@
     ],
     "modules-right": [
         "network",
+        "idle_inhibitor",
         // "memory",
         // "cpu",
         // "temperature",
@@ -105,6 +106,14 @@
       "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
       "on-scroll-up": "swaymsg input type:keyboard xkb_switch_layout next",
       "on-scroll-down": "swaymsg input type:keyboard xkb_switch_layout prev",
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "",
+        },
     },
 
     "memory": {

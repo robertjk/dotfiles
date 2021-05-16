@@ -22,6 +22,6 @@
 # Turn off and lock the screen after 3 minutes
 # Lock the screen when going to sleep/hibernating
 exec swayidle -w \
-    timeout 180 "swaymsg 'output * dpms off'; $lock" \
+    timeout 300 "swaymsg 'output * dpms off'; $lock" \
         resume "swaymsg 'output * dpms on'" \
     before-sleep "$lock"
