@@ -91,10 +91,10 @@ nmap <Leader>l :set list!<CR>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Edit in current directory
-map <Leader>ew :edit %%
-map <Leader>es :split %%
-map <Leader>ev :vsplit %%
-map <Leader>et :tabedit %%
+map <Leader>cde :edit %%
+map <Leader>cds :split %%
+map <Leader>cdv :vsplit %%
+map <Leader>cdt :tabedit %%
 
 " Map :nohlsearch (disable search highlight) to <Ctrl-l>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
