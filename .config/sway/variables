@@ -23,7 +23,7 @@ set $term alacritty
 #
 # NOTE: pass the final command to swaymsg so that the resulting window can be
 # opened on the original workspace that the command was run on.
-set $menu wofi | swaymsg exec --
+set $menu wofi --show=drun --prompt="Enter the application name" | swaymsg exec --
 
 # Workspaces
 set $workspace_www 1:WWW
