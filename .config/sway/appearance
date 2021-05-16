@@ -12,4 +12,4 @@ font pango:system-ui 14px
 output * bg `ls -1 ./wallpapers/* | sort -R | head -1` fill
 
 # Gaps
-gaps inner 8
+gaps inner 4
