@@ -1,0 +1,7 @@
+set guioptions ""
+set window-title-basename true
+set window-title-page true
+set scroll-page-aware true
+
+map <Space> scroll half-down
+map <S-Space> scroll half-down
