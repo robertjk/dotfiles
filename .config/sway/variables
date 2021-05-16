@@ -27,9 +27,9 @@ set $menu wofi | swaymsg exec --
 
 # Workspaces
 set $workspace_www 1:WWW
-set $workspace_mail 2:Mail
-set $workspace_editor 3:Editor
-set $workspace_terminals 4:Terminals
+set $workspace_editor 2:Editor
+set $workspace_terminals 3:Terminals
+set $workspace_mail 4:Mail
 set $workspace_documents 8:Documents
 set $workspace_multimedia 9:Multimedia
 set $workspace_torrent 10:Torrent

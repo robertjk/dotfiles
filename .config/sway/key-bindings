@@ -79,24 +79,24 @@ bindsym $key_mod+Shift+Right move right
 
 # Switch to workspace
 bindsym $key_mod+1 workspace $workspace_www
-bindsym $key_mod+2 workspace $workspace_mail
-bindsym $key_mod+3 workspace $workspace_editor
-bindsym $key_mod+4 workspace $workspace_terminals
-bindsym $key_mod+5 workspace 5
-bindsym $key_mod+6 workspace 6
-bindsym $key_mod+7 workspace 7
+bindsym $key_mod+2 workspace $workspace_editor
+bindsym $key_mod+3 workspace $workspace_terminals
+bindsym $key_mod+4 workspace $workspace_mail
+bindsym $key_mod+5 workspace number 5
+bindsym $key_mod+6 workspace number 6
+bindsym $key_mod+7 workspace number 7
 bindsym $key_mod+8 workspace $workspace_documents
 bindsym $key_mod+9 workspace $workspace_multimedia
 bindsym $key_mod+0 workspace $workspace_torrent
 
 # Move focused container to workspace
 bindsym $key_mod+Shift+1 move container to workspace $workspace_www
-bindsym $key_mod+Shift+2 move container to workspace $workspace_mail
-bindsym $key_mod+Shift+3 move container to workspace $workspace_editor
-bindsym $key_mod+Shift+4 move container to workspace $workspace_terminals
-bindsym $key_mod+Shift+5 move container to workspace 5
-bindsym $key_mod+Shift+6 move container to workspace 6
-bindsym $key_mod+Shift+7 move container to workspace 7
+bindsym $key_mod+Shift+2 move container to workspace $workspace_editor
+bindsym $key_mod+Shift+3 move container to workspace $workspace_terminals
+bindsym $key_mod+Shift+4 move container to workspace $workspace_mail
+bindsym $key_mod+Shift+5 move container to workspace number 5
+bindsym $key_mod+Shift+6 move container to workspace number 6
+bindsym $key_mod+Shift+7 move container to workspace number 7
 bindsym $key_mod+Shift+8 move container to workspace $workspace_documents
 bindsym $key_mod+Shift+9 move container to workspace $workspace_multimedia
 bindsym $key_mod+Shift+0 move container to workspace $workspace_torrent
@@ -193,4 +193,3 @@ bindsym --locked XF86Display exec 'swaymsg "output $output_laptop toggle"'
 # Change keyboard layout
 # Also send signal 1 to waybar to signal the change.
 bindsym Control+Shift+space exec "swaymsg input type:keyboard xkb_switch_layout next ; pkill --signal SIGRTMIN+1 waybar"
-
