@@ -6,47 +6,28 @@
 
 
 " ------------------------------------------------------------------------------
-" Polyglot
-" ------------------------------------------------------------------------------
-
-" List of plugins in the pack to not use
-let g:polyglot_disabled = []
-
-
-" ------------------------------------------------------------------------------
 " Plug (plugin manager) configuration, listing all the plugins.
 " ------------------------------------------------------------------------------
 
 " Specify directory for plugins.
-call plug#begin($MYVIMCACHE . 'plugged')
+call plug#begin(stdpath('data') . '/plugged')
     " Language/filetype support
     "
     " The ones that I've been using before Polyglot:
     " - tpope/vim-git
-    " - PotatoesMaster/i3-vim-syntax
     " - pangloss/vim-javascript
     " - othree/html5.vim
     " - cakebaker/scss-syntax.vim
     " - leafgarland/typescript-vim
     " - mxw/vim-jsx
     " - posva/vim-vue
+    let g:polyglot_disabled = ['sensible']         " List of plugins in the pack to not use
     Plug 'sheerun/vim-polyglot'                    " Polyglot language pack
     Plug 'hail2u/vim-css3-syntax'                  " CSS 3
-                                                   " Styled components
-    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
     Plug 'Quramy/tsuquyomi'                        " TypeScript IDE support
-    Plug 'Shougo/vimproc.vim', {'do' : 'make'}     " Dependency for tsuquyomi
 
     " Color schemes
-    Plug 'sjl/badwolf'                                    " Bad Wolf
-    Plug 'blockloop/vim-codeschool'                       " Codeschool
-    Plug 'nanotech/jellybeans.vim'                        " Jellybeans
-    Plug 'erichdongubler/vim-sublime-monokai'             " Monokai
-    Plug 'arcticicestudio/nord-vim'                       " Nord
-    Plug 'mhartington/oceanic-next'                       " Oceanic Next
-    Plug 'NLKNguyen/papercolor-theme'                     " PaperColor
-    Plug 'altercation/vim-colors-solarized'               " Solarized
-    Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}   " Tomorrow
+    Plug 'nanotech/jellybeans.vim'          " Jellybeans
 
     " Others
     Plug 'tpope/vim-abolish'                 " Abolish
@@ -68,6 +49,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'xolox/vim-session'                 " Session
     Plug 'xolox/vim-misc'                    " (Dependency for vim-session)
     Plug 'tpope/vim-speeddating'             " Speeddating (improving C-A, C-X)
+    Plug 'lambdalisue/suda.vim'              " Suda
     Plug 'tpope/vim-surround'                " Surround
     Plug 'godlygeek/tabular'                 " Tabular
     Plug 'kana/vim-textobj-entire'           " Textobj entire (buffer)
@@ -77,7 +59,7 @@ call plug#begin($MYVIMCACHE . 'plugged')
     Plug 'tpope/vim-unimpaired'              " Unimpaired (some hotkeys)
     Plug 'nelstrom/vim-visual-star-search'   " Visual star search
                                              " YouCompleteMe
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 call plug#end()
 
 
@@ -89,6 +71,7 @@ call plug#end()
 let g:airline_theme = 'jellybeans'
 " Disable displaying Git branch name
 let g:airline#extensions#branch#enabled = 0
+
 
 " ------------------------------------------------------------------------------
 " Ale
@@ -189,7 +172,7 @@ let g:matchup_transmute_enabled = 1
 " ------------------------------------------------------------------------------
 
 " Where to save sessions.
-let g:session_directory = $MYVIMCACHE . 'session'
+let g:session_directory = stdpath('data') . '/session'
 " not display prompt for loading last/default session when Vim starts
 let g:session_autoload = 'no'
 " Save session on quitting Vim

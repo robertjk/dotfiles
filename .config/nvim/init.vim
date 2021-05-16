@@ -12,7 +12,7 @@
 source ~/.config/nvim/init-parts/basic.vim
 
 " Add some features to Vim
-source ~/.config/nvim/init-parts/plugin.vim
+source ~/.config/nvim/init-parts/plugins.vim
 source ~/.config/nvim/init-parts/autoreload-files.vim
 source ~/.config/nvim/init-parts/html-text-object-linewise.vim
 source ~/.config/nvim/init-parts/open-file-on-last-position.vim
