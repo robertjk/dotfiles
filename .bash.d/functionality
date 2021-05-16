@@ -8,7 +8,7 @@
 export EDITOR=nvim
 
 # History settings
-export HISTFILESIZE=100000000
+export HISTFILESIZE=10000
 export HISTSIZE=10000
 
 # Allow to use CTRL-s to search history forward like CTRL-r does backward
