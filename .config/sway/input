@@ -29,11 +29,11 @@ input type:keyboard {
 # Any touchpad
 input type:touchpad {
     natural_scroll enabled
+    dwt enabled
 }
 
 # ThinkPad P1 touchpad
 input "2:7:SynPS/2_Synaptics_TouchPad" {
-    dwt enabled
     pointer_accel 0.60
 }
 
