@@ -15,6 +15,7 @@
 #
 output $output_monitor pos 0 0       res 1920x1200
 output $output_laptop  pos 1920 650  res 1920x1080
+output $output_tv      disable
 
 # Disable laptop output when the lid is closed
 bindswitch --reload --locked lid:on output $output_laptop disable

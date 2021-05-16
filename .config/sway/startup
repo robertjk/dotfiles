@@ -21,9 +21,9 @@ set $neovim $term --title "Neovim" --command nvim
 exec firefox-developer-edition
 exec thunderbird
 exec $neovim
-exec --no-startup-id swaymsg "workspace $workspace_terminals; exec $term"
+exec swaymsg "workspace $workspace_terminals; exec $term"
 exec udiskie
-exec safeeyes
+exec stretchly
 
 
 ### Set focus

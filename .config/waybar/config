@@ -146,7 +146,8 @@
             "car": "", // Icon: car
             "default": ["", ""] // Icons: volume-down, volume-up
         },
-        "on-click": "alacritty --title='Sound Mixer' --command='pulsemixer'",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "alacritty --title='Sound Mixer' --command='pulsemixer'",
         "tooltip": true
     },
 
