@@ -36,13 +36,12 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'dense-analysis/ale'                " Asynchronous Lint Engine (ALE)
     Plug 'tpope/vim-commentary'              " Commentary
     Plug 'suy/vim-context-commentstring'     " Context commentstring
-    Plug 'ctrlpvim/ctrlp.vim'                " ctrlp (fuzzy finder)
-    Plug 'FelikZ/ctrlp-py-matcher'           " ctrlp matcher
     Plug 'justinmk/vim-dirvish'              " Dirvish (file explorer)
     Plug 'mattn/emmet-vim'                   " Emmet
     Plug 'editorconfig/editorconfig-vim'     " EditorConfig
     Plug 'tpope/vim-eunuch'                  " Eunuch (shell commands)
     Plug 'tpope/vim-fugitive'                " Fugitive (Git)
+                                             " fzf (Installed by OS)
     Plug 'sjl/gundo.vim'                     " Gundo (visual undo tree)
     Plug 'andymass/vim-matchup'              " Matchup (Matchit replacement)
     Plug 'tpope/vim-repeat'                  " Repeat
@@ -118,37 +117,6 @@ let g:jellybeans_overrides = {
 
 
 " ------------------------------------------------------------------------------
-" ctrlp
-" ------------------------------------------------------------------------------
-
-" Which command to start when pressing Ctrl + P
-let g:ctrlp_cmd = 'CtrlPLastMode'
-" Set maximum number of results
-let g:ctrlp_match_window = 'results:1000'
-" When to switch to another window if the result being opened is already opened
-" somewhere
-let g:ctrlp_switch_buffer = 'et'
-" ctrlp will work in current directory by default
-let g:ctrlp_working_path_mode = 'd'
-" Persist cache between sessions
-let g:ctrlp_clear_cache_on_exit = 0
-" Include hidden files and directories
-let g:ctrlp_show_hidden = 1
-" Set maximum number of files to scan to unlimited
-let g:ctrlp_max_files = 0
-" Follow symlinks but avoid loops
-let g:ctrlp_follow_symlinks = 1
-" PyMatcher function for CtrlP
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-" Extensions to use
-let g:ctrlp_extensions = []
-" Directories to ignore
-set wildignore+=*/node_modules/*,*/.git/*
-" Custom mappings
-nnoremap <Leader><C-p>c :CtrlP ~/.config<CR>
-
-
-" ------------------------------------------------------------------------------
 " Dirvish
 " ------------------------------------------------------------------------------
 
@@ -159,6 +127,15 @@ let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+
+
+" ------------------------------------------------------------------------------
+" fzf
+"
+" NOTE: fzf is installed as OS package, which automatically adds Vim plugin
+" adding :FZF command.
+" ------------------------------------------------------------------------------
+nnoremap <C-p> :<C-u>FZF<CR>
 
 
 " ------------------------------------------------------------------------------
