@@ -1,0 +1,41 @@
+add_newline = false
+
+command_timeout = 1000
+
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$env_var\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+
+[username]
+style_user = "bold dimmed purple"
+
+[hostname]
+style = "bold green"
+
+[directory]
+style = "bold blue"
+truncation_length = 0
+truncate_to_repo = false
+
+[git_branch]
+style = "bold yellow"
+
+[git_status]
+disabled = true
