@@ -10,6 +10,9 @@ zmodule environment
 # Correct keybindings for input events
 zmodule input
 
+# Run help for the current command on ESC-h
+zmodule run-help
+
 # `archive` and `unarchive` functions
 zmodule archive
 
@@ -28,8 +31,6 @@ zmodule fzf
 
 # Starship prompt
 zmodule joke/zim-starship
-
-zmodule run-help
 
 # Reminds you to use existing aliases
 zmodule MichaelAquilina/zsh-you-should-use
