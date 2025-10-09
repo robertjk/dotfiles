@@ -1,11 +1,11 @@
 [user]
-    email = no-cheating@autistici.org
+    email = robert.kusznier@invisible.email
     name = Robert J. Kusznier
 
 [core]
-    editor = nvim
+    editor = vim
     ; Global gitignore (applied to all repositories)
-    excludesFile = ~/.git.d/gitignore-global
+    excludesFile = ~/.config/git/ignore-global
 
 [commit]
     ; Show full diff when editing commit message
@@ -14,31 +14,8 @@
 [push]
     default = simple
 
-[merge]
-    ; Tool used by `git mergetool`
-    tool = nvim-diff4
-
 [pull]
     ff = only
-
-[diff]
-    ; Tool used by `git difftool`
-    tool = nvim-diff2
-
-[mergetool "nvim-diff4"]
-    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-    ; Abort operation if editor exited with non-zero status
-    trustExitCode = true
-
-[mergetool "nvim-fugitive-diff3"]
-	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
-    ; Abort operation if editor exited with non-zero status
-    trustExitCode = true
-
-[difftool "nvim-diff-2"]
-    cmd = nvim -d $LOCAL $REMOTE
-    ; Abort operation if editor exited with non-zero status
-    trustExitCode = true
 
 [alias]
     ; Aliases for `git` commands
@@ -68,7 +45,3 @@
 [rerere]
     ; Track and remember conflict resolutions
 	enabled = true
-
-; Overwrite/extend this config for work related repositories
-[includeIf "gitdir:~/programming/credijusto/"]
-    path = ~/.gitconfig.credijusto
