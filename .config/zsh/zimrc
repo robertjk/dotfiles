@@ -34,3 +34,6 @@ zmodule joke/zim-starship
 
 # Reminds you to use existing aliases
 zmodule MichaelAquilina/zsh-you-should-use
+
+# Updates terminal/tab title to current location
+zmodule olets/zsh-window-title
