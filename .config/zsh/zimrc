@@ -4,7 +4,7 @@
 zmodule completion
 
 # Set generic Zsh built-in environment options
-# HISTFILE set in .zshrc
+# Note: HISTFILE set in .zshrc
 zmodule environment
 
 # Correct keybindings for input events
