@@ -1,6 +1,8 @@
-add_newline = false
+# Config reference: https://starship.rs/config/ 
 
-command_timeout = 1000
+# Disabled as it adds empty line before the first prompt as well.
+# Empty lines between prompts (but not before the first one) are added in .zshrc
+add_newline = false
 
 format = """
 $username\
@@ -38,4 +40,4 @@ truncate_to_repo = false
 style = "bold yellow"
 
 [git_status]
-disabled = true
+disabled = false # Can be enabled on slow repositories
