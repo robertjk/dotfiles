@@ -1,0 +1,38 @@
+# Modules reference: https://zimfw.sh/docs/modules/
+
+# Tab-completion
+zmodule completion
+
+# Set generic Zsh built-in environment options
+# HISTFILE set in .zshrc
+zmodule environment
+
+# Correct keybindings for input events
+zmodule input
+
+# `archive` and `unarchive` functions
+zmodule archive
+
+# Convenient way to load ssh-agent
+zstyle ':zim:ssh' ids 'id_ed25519'
+zmodule ssh
+
+# Utility aliases; adds color to `ls`, `grep` and `less`
+zmodule utility
+
+# Aliases and better defaults for exa
+zmodule exa
+
+# FZF
+zmodule fzf
+# FZF color scheme JellyX: https://github.com/junegunn/fzf/wiki/Color-schemes
+FZF_DEFAULT_OPTS="
+    --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
+    --color info:150,prompt:110,spinner:150,pointer:167,marker:174
+"
+
+# Starship prompt
+zmodule joke/zim-starship
+
+# Reminds you to use existing aliases
+zmodule MichaelAquilina/zsh-you-should-use
