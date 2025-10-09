@@ -9,6 +9,6 @@
 [[ $- != *i* ]] && return
 
 # Source parts of bashrc
-source ~/.bash.d/aliases
-source ~/.bash.d/functionality
-source ~/.bash.d/appearance
+source ~/.config/bash/aliases
+source ~/.config/bash/functionality
+source ~/.config/bash/appearance
