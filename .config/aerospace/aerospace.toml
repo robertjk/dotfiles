@@ -1,21 +1,17 @@
-# Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+###############################################################################
+# General
+###############################################################################
+
+# Start AeroSpace at login
+start-at-login = true
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
-# Start AeroSpace at login
-start-at-login = true
-
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
-
-# See: https://nikitabobko.github.io/AeroSpace/guide#layouts
-# The 'accordion-padding' specifies the size of accordion padding
-# You can set 0 to disable the padding feature
-accordion-padding = 30
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -35,12 +31,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
-# Possible values: (qwerty|dvorak|colemak)
-# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-[key-mapping]
-    preset = 'qwerty'
+# See: https://nikitabobko.github.io/AeroSpace/guide#layouts
+# The 'accordion-padding' specifies the size of accordion padding
+# You can set 0 to disable the padding feature
+accordion-padding = 0
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -51,15 +47,25 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 8
-    inner.vertical =   8
-    outer.left =       8
-    outer.bottom =     8
-    outer.top =        8
-    outer.right =      8
+    inner.horizontal = 10
+    inner.vertical =   10
+    outer.left =       10
+    outer.bottom =     10
+    outer.top =        10
+    outer.right =      10
 
-# 'main' binding mode declaration
+# Possible values: (qwerty|dvorak|colemak)
+# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+    preset = 'qwerty'
+
+
+###############################################################################
+# Binding modes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+###############################################################################
+
+# 'main' binding mode
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
@@ -121,28 +127,9 @@ automatically-unhide-macos-hidden-apps = false
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-    # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-    # alt-b = 'workspace B'
-    # alt-c = 'workspace C'
-    # alt-d = 'workspace D'
-    # alt-e = 'workspace E'
-    # alt-f = 'workspace F'
-    # alt-g = 'workspace G'
-    # alt-i = 'workspace I'
-    # alt-m = 'workspace M'
-    # alt-n = 'workspace N'
-    # alt-o = 'workspace O'
-    # alt-p = 'workspace P'
-    # alt-q = 'workspace Q'
-    # alt-r = 'workspace R'
-    # alt-s = 'workspace S'
-    # alt-t = 'workspace T'
-    # alt-u = 'workspace U'
-    # alt-v = 'workspace V'
-    # alt-w = 'workspace W'
-    # alt-x = 'workspace X'
-    # alt-y = 'workspace Y'
-    # alt-z = 'workspace Z'
+    alt-c = 'workspace Communication'
+    alt-s = 'workspace Slack+Music'
+    alt-w = 'workspace WWW+Code'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -154,28 +141,9 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-    # alt-shift-a = 'move-node-to-workspace A'
-    # alt-shift-b = 'move-node-to-workspace B'
-    # alt-shift-c = 'move-node-to-workspace C'
-    # alt-shift-d = 'move-node-to-workspace D'
-    # alt-shift-e = 'move-node-to-workspace E'
-    # alt-shift-f = 'move-node-to-workspace F'
-    # alt-shift-g = 'move-node-to-workspace G'
-    # alt-shift-i = 'move-node-to-workspace I'
-    # alt-shift-m = 'move-node-to-workspace M'
-    # alt-shift-n = 'move-node-to-workspace N'
-    # alt-shift-o = 'move-node-to-workspace O'
-    # alt-shift-p = 'move-node-to-workspace P'
-    # alt-shift-q = 'move-node-to-workspace Q'
-    # alt-shift-r = 'move-node-to-workspace R'
-    # alt-shift-s = 'move-node-to-workspace S'
-    # alt-shift-t = 'move-node-to-workspace T'
-    # alt-shift-u = 'move-node-to-workspace U'
-    # alt-shift-v = 'move-node-to-workspace V'
-    # alt-shift-w = 'move-node-to-workspace W'
-    # alt-shift-x = 'move-node-to-workspace X'
-    # alt-shift-y = 'move-node-to-workspace Y'
-    # alt-shift-z = 'move-node-to-workspace Z'
+    alt-shift-c = 'move-node-to-workspace Communication'
+    alt-shift-s = 'move-node-to-workspace Slack+Music'
+    alt-shift-w = 'move-node-to-workspace WWW+Code'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -184,16 +152,16 @@ automatically-unhide-macos-hidden-apps = false
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
+    alt-shift-quote = 'mode pause'
 
     alt-shift-f = 'fullscreen'
 
-# 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+# 'service' binding mode
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-    backspace = ['close-all-windows-but-current', 'mode main']
+    # backspace = ['close-all-w…indows-but-current', 'mode main']
 
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
@@ -207,16 +175,78 @@ automatically-unhide-macos-hidden-apps = false
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
 
-# Assign windows to workspaces
+# 'pause' binding mode
+[mode.pause.binding]
+    esc = 'mode main'
+
+
+###############################################################################
+# App (windows) configuration
+# See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
+###############################################################################
+
+# App Store
 [[on-window-detected]]
-    if.app-id = "org.mozilla.firefoxdeveloperedition"
-    run = "move-node-to-workspace 1"
+    if.app-id = "com.apple.AppStore"
+    run = "layout floating"
+
+# Calendar
+[[on-window-detected]]
+    if.app-id = "com.apple.iCal"
+    run = "move-node-to-workspace Communication"
+
+# Chrome
 [[on-window-detected]]
     if.app-id = "com.google.Chrome"
-    run = "move-node-to-workspace 1"
+    run = "move-node-to-workspace WWW+Code"
+
+# Discord
 [[on-window-detected]]
-    if.app-id = "com.github.wez.wezterm"
-    run = "move-node-to-workspace 1"
+    if.app-id = "com.hnc.Discord"
+    run = "move-node-to-workspace Slack+Music"
+
+# Finder
+[[on-window-detected]]
+    if.app-id = "com.apple.finder"
+    run = "layout floating"
+
+# Firefox
+[[on-window-detected]]
+    if.app-id = "org.mozilla.firefoxdeveloperedition"
+    run = "move-node-to-workspace WWW+Code"
+
+# Mail
+[[on-window-detected]]
+    if.app-id = "com.apple.mail"
+    if.window-title-regex-substring = "New Message"
+    run = "layout floating"
+    check-further-callbacks = true
+
+[[on-window-detected]]
+    if.app-id = "com.apple.mail"
+    run = "move-node-to-workspace Communication"
+
+# Slack
+[[on-window-detected]]
+    if.app-id = "com.tinyspeck.slackmacgap"
+    run = "move-node-to-workspace Slack+Music"
+
+# Tidal
+[[on-window-detected]]
+    if.app-id = "com.tidal.desktop"
+    run = "move-node-to-workspace Slack+Music"
+
+# VS Code
 [[on-window-detected]]
     if.app-id = "com.microsoft.VSCode"
-    run = "move-node-to-workspace 1"
+    run = "move-node-to-workspace WWW+Code"
+
+# WezTerm
+[[on-window-detected]]
+    if.app-id = "com.github.wez.wezterm"
+    run = "move-node-to-workspace WWW+Code"
+
+# Zoom
+[[on-window-detected]]
+    if.app-id = "us.zoom.xos"
+    run = ["layout floating", "move-node-to-workspace WWW+Code"]
