@@ -1,2 +1,2 @@
-# Initialize Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Source parts of ZSH configuration
+source "$HOME/.config/zsh/brew-init.zsh"
