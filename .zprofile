@@ -1,2 +1,2 @@
 # Source parts of ZSH configuration
-source "$HOME/.config/zsh/brew-init.zsh"
+source "$HOME/.config/zsh/homebrew-init.zsh"
