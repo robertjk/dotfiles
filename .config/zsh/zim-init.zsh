@@ -1,4 +1,4 @@
-### Initialize Zim
+# Initialize Zim
 
 # Configuration in ~/.config/zsh/.zimrc
 

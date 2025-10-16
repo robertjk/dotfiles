@@ -1,2 +1,4 @@
+# zprofile
+
 # Source parts of ZSH configuration
-source "$HOME/.config/zsh/homebrew-init.zsh"
+source "$HOME/.config/zsh/homebrew.zsh"
