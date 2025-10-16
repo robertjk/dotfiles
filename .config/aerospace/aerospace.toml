@@ -215,16 +215,15 @@ accordion-padding = 0
     if.app-id = "org.mozilla.firefoxdeveloperedition"
     run = "move-node-to-workspace WWW+Code"
 
-# Mail
+# MailMate
 [[on-window-detected]]
-    if.app-id = "com.apple.mail"
-    if.window-title-regex-substring = "New Message"
-    run = "layout floating"
+    if.app-id = "com.freron.MailMate"
+    run = ["layout floating", "move-node-to-workspace Communication"]
     check-further-callbacks = true
-
 [[on-window-detected]]
-    if.app-id = "com.apple.mail"
-    run = "move-node-to-workspace Communication"
+    if.app-id = "com.freron.MailMate"
+    if.window-title-regex-substring = "\\(\\d+ Messages?\\)"
+    run = "layout tiling"
 
 # Slack
 [[on-window-detected]]
