@@ -127,9 +127,11 @@ accordion-padding = 0
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-    alt-c = 'workspace Communication'
+    alt-c = 'workspace Call'
+    alt-m = 'workspace Mail+Calendar'
     alt-s = 'workspace Slack+Music'
     alt-w = 'workspace WWW+Code'
+    alt-f = 'workspace Files'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -141,9 +143,11 @@ accordion-padding = 0
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-    alt-shift-c = 'move-node-to-workspace Communication'
+    alt-shift-c = 'move-node-to-workspace Call'
+    alt-shift-m = 'move-node-to-workspace Mail+Calendar'
     alt-shift-s = 'move-node-to-workspace Slack+Music'
     alt-shift-w = 'move-node-to-workspace WWW+Code'
+    alt-shift-f = 'move-node-to-workspace Files'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -154,14 +158,13 @@ accordion-padding = 0
     alt-shift-semicolon = 'mode service'
     alt-shift-quote = 'mode pause'
 
-    alt-shift-f = 'fullscreen'
-
 # 'service' binding mode
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-    # backspace = ['close-all-w…indows-but-current', 'mode main']
+    l = "fullscreen"
+    backspace = ['close-all-windows-but-current', 'mode main']
 
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
@@ -185,15 +188,15 @@ accordion-padding = 0
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 ###############################################################################
 
+# 1Password
+[[on-window-detected]]
+    if.app-id = "com.1password.1password"
+    run = "layout floating"
+
 # App Store
 [[on-window-detected]]
     if.app-id = "com.apple.AppStore"
     run = "layout floating"
-
-# Calendar
-[[on-window-detected]]
-    if.app-id = "com.apple.iCal"
-    run = "move-node-to-workspace Communication"
 
 # Chrome
 [[on-window-detected]]
@@ -208,7 +211,7 @@ accordion-padding = 0
 # Finder
 [[on-window-detected]]
     if.app-id = "com.apple.finder"
-    run = "layout floating"
+    run = "move-node-to-workspace Files"
 
 # Firefox
 [[on-window-detected]]
@@ -218,12 +221,17 @@ accordion-padding = 0
 # MailMate
 [[on-window-detected]]
     if.app-id = "com.freron.MailMate"
-    run = ["layout floating", "move-node-to-workspace Communication"]
+    run = ["layout floating", "move-node-to-workspace Mail+Calendar"]
     check-further-callbacks = true
 [[on-window-detected]]
     if.app-id = "com.freron.MailMate"
     if.window-title-regex-substring = "\\(\\d+ Messages?\\)"
     run = "layout tiling"
+
+# Notion Calendar
+[[on-window-detected]]
+    if.app-id = "com.cron.electron"
+    run = "move-node-to-workspace Mail+Calendar"
 
 # Slack
 [[on-window-detected]]
@@ -248,4 +256,4 @@ accordion-padding = 0
 # Zoom
 [[on-window-detected]]
     if.app-id = "us.zoom.xos"
-    run = ["layout floating", "move-node-to-workspace WWW+Code"]
+    run = ["layout floating", "move-node-to-workspace Call"]
